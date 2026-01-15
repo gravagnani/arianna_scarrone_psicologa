@@ -1,0 +1,90 @@
+---
+import Telephone from "../assets/icons/telephone.svg";
+import Email from "../assets/icons/email.svg";
+import Logo from "../assets/logos/logo.svg";
+
+const navbarContacts = [
+  {logo: Telephone, text: "(123) 456-7890"},
+  {logo: Email, text: "8W5Q9@example.com"},
+];
+
+const navbarLinks = [
+  { href: "/", text: "Chi sono" },
+  { href: "/#come-lavoro", text: "Come lavoro" },
+  { href: "/#come-posso-aiutarti", text: "Come posso aiutarti" },
+  { href: "/studio", text: "Lo studio" },
+  { href: "/faq", text: "FAQ" },
+];
+---
+
+
+<div id="navbar">
+  <div id="contacts">
+    {
+      navbarContacts.map((contact) => (
+        <div class="contact"><contact.logo class="icon"/>{contact.text}</div>
+      ))
+    }
+  </div>
+  <nav id="links">
+    <Logo class="logo"/>
+    {
+      navbarLinks.map((link) => (
+        <a href={link.href}>{link.text}</a>
+      ))
+    }
+  </nav>
+</div>
+
+<style>
+  #navbar {
+    background: var(--color-primary);
+  }
+
+  #contacts {
+    padding: var(--space-sm) var(--space-md);
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    gap: var(--gap-md);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  #links {
+    padding: var(--space-sm) var(--space-md);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .contact {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    color: var(--color-text-secondary);
+  }
+
+  nav a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--color-text-main);
+  }
+
+  nav a:hover {
+    text-decoration: underline;
+  }
+
+  .icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .logo {
+    width: 120px;
+    height: auto;
+  }
+</style>
