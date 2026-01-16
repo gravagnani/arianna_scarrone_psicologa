@@ -1,11 +1,10 @@
 ---
-import Telephone from "../assets/icons/telephone.svg";
-import Email from "../assets/icons/email.svg";
 import Logo from "../assets/logos/logo.svg";
+import { Phone, Mail } from "@lucide/astro";
 
 const navbarContacts = [
-  {logo: Telephone, text: "(123) 456-7890"},
-  {logo: Email, text: "8W5Q9@example.com"},
+  { logo: Phone, text: "(123) 456-7890" },
+  { logo: Mail, text: "8W5Q9@example.com" },
 ];
 
 const navbarLinks = [
@@ -17,24 +16,64 @@ const navbarLinks = [
 ];
 ---
 
-
-<div id="navbar">
+<header id="navbar">
+  <!-- TOP CONTACT BAR -->
   <div id="contacts">
     {
       navbarContacts.map((contact) => (
-        <div class="contact"><contact.logo class="icon"/>{contact.text}</div>
+        <div class="contact">
+          <contact.logo class="icon" />
+          <span>{contact.text}</span>
+        </div>
       ))
     }
   </div>
-  <nav id="links">
-    <Logo class="logo"/>
-    {
-      navbarLinks.map((link) => (
-        <a href={link.href}>{link.text}</a>
-      ))
-    }
+
+  <!-- MAIN NAV -->
+  <nav id="links" aria-label="Main navigation">
+    <Logo class="logo" />
+
+    <button id="menu-toggle" aria-label="Toggle menu" type="button">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div id="nav-menu">
+      {navbarLinks.map((link) => <a href={link.href}>{link.text}</a>)}
+
+      <!-- MOBILE CONTACTS -->
+      <div id="contacts-mobile">
+        {
+          navbarContacts.map((contact) => (
+            <div class="contact">
+              <contact.logo class="icon" />
+              <span>{contact.text}</span>
+            </div>
+          ))
+        }
+      </div>
+    </div>
   </nav>
-</div>
+</header>
+
+<script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.getElementById("menu-toggle");
+    const navMenu = document.getElementById("nav-menu");
+    menuToggle?.addEventListener("click", () => {
+      navMenu?.classList.toggle("active");
+      menuToggle?.classList.toggle("active");
+    });
+    // Close menu when clicking on a link
+    navMenu?.querySelectorAll("a")?.forEach((link) => {
+      link.addEventListener("click", () => {
+        navMenu?.classList.remove("active");
+        menuToggle?.classList.remove("active");
+      });
+    });
+  });
+</script>
 
 <style>
   #navbar {
@@ -51,6 +90,25 @@ const navbarLinks = [
     border-bottom: 1px solid var(--color-border);
   }
 
+  #contacts-mobile {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    #contacts {
+      display: none;
+    }
+    #contacts-mobile {
+      display: flex;
+      flex-direction: column;
+      gap: var(--gap-sm);
+      width: 100%;
+      margin-top: 20px;
+      border-top: 1px solid var(--color-border);
+      padding-top: 10px;
+    }
+  }
+
   #links {
     padding: var(--space-sm) var(--space-md);
     display: flex;
@@ -58,6 +116,47 @@ const navbarLinks = [
     align-items: center;
     justify-content: center;
     gap: 20px;
+    position: relative;
+  }
+
+  #nav-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+  }
+
+  #menu-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    gap: 4px;
+    position: absolute;
+    right: var(--space-md);
+    z-index: 1001;
+  }
+
+  #menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-text-main);
+    transition: all 0.3s ease;
+    border-radius: 2px;
+  }
+
+  #menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  #menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  #menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
   }
 
   .contact {
@@ -86,5 +185,69 @@ const navbarLinks = [
   .logo {
     width: 120px;
     height: auto;
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    #contacts {
+      flex-direction: column;
+      gap: var(--gap-sm);
+      padding: var(--space-xs) var(--space-sm);
+    }
+
+    .contact {
+      font-size: 12px;
+    }
+
+    #links {
+      justify-content: space-between;
+      padding: var(--space-sm);
+    }
+
+    .logo {
+      width: 100px;
+    }
+
+    #menu-toggle {
+      display: flex;
+    }
+
+    #nav-menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 70%;
+      max-width: 300px;
+      height: 100vh;
+      background: var(--color-primary);
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 80px 30px 30px;
+      gap: 30px;
+      box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+      transition: right 0.3s ease;
+      z-index: 1000;
+      overflow-y: auto;
+    }
+
+    #nav-menu.active {
+      right: 0;
+    }
+
+    #nav-menu a {
+      width: 100%;
+      padding: 10px 0;
+      font-size: 18px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .logo {
+      width: 80px;
+    }
+
+    #nav-menu {
+      width: 80%;
+    }
   }
 </style>
