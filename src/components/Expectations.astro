@@ -1,0 +1,104 @@
+---
+import ExpectationsImage from "../assets/expectations-image.jpg";
+---
+
+<section class="expectations">
+  <div class="expectations-content">
+    <div class="expectations-text">
+      <h2>Cosa aspettarsi dalla mia consulenza psicologica</h2>
+      <h3>Accoglienza e ascolto</h3>
+      <p>
+        Durante la prima seduta, ti accoglierò in uno spazio sicuro e riservato,
+        dove potrai esprimere liberamente pensieri, emozioni e difficoltà. Il
+        mio obiettivo è comprendere la tua storia e le tue esigenze, senza
+        giudizio.
+      </p>
+      <h3>Metodo di lavoro</h3>
+      <p>
+        Il mio approccio integra tecniche evidence-based e personalizzazione del
+        percorso. Dopo una fase di valutazione, definiremo insieme gli obiettivi
+        e le strategie più adatte a te. Il lavoro sarà collaborativo, con
+        momenti di riflessione, esercizi pratici e monitoraggio dei progressi.
+      </p>
+      <h3>Riservatezza e professionalità</h3>
+      <p>
+        Tutto ciò che verrà condiviso resterà strettamente confidenziale. Mi
+        impegno a garantire il massimo rispetto della privacy e della
+        deontologia professionale.
+      </p>
+    </div>
+    <div class="expectations-image">
+      <img src={ExpectationsImage.src} alt="Sessione psicologica" />
+    </div>
+  </div>
+</section>
+
+<style>
+  .expectations {
+    width: 100%;
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .expectations-content {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    max-width: 1100px;
+    width: 100%;
+    align-items: stretch;
+  }
+
+  .expectations-text {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1.15rem;
+    color: var(--color-text-main, #222);
+  }
+  .expectations-text h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-primary-dark, #6f8f7c);
+  }
+  .expectations-text h3 {
+    font-size: 1.25rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-primary, #94b09f);
+  }
+  .expectations-text p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+  }
+
+  .expectations-image {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .expectations-image img {
+    width: 100%;
+    max-width: 350px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 1rem;
+    background: #eee;
+  }
+
+  @media (max-width: 900px) {
+    .expectations-content {
+      flex-direction: column;
+      gap: 2rem;
+      align-items: center;
+    }
+    .expectations-image img {
+      max-width: 100%;
+      height: 300px;
+    }
+  }
+</style>
