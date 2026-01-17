@@ -1,0 +1,109 @@
+---
+// No props for now
+import HeroImage from "../assets/hero-image.png";
+---
+
+<section class="hero">
+  <h1 class="hero-title">Benvenuto!</h1>
+  <div class="hero-content">
+    <div class="hero-image">
+      <img src={HeroImage.src} alt="Hero Image" />
+    </div>
+    <div class="hero-text">
+      <div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+          euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi,
+          euismod euismod nisi nisi euismod. Sed cursus, velit nec pulvinar
+          dictum, enim erat facilisis urna, nec dictum erat urna a erat. Etiam
+          euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget
+          aliquam nisl nunc eu nunc. Mauris euismod, nisl eu aliquam tincidunt,
+          nunc nisl aliquam nunc, eget aliquam nunc nunc eu nunc. Suspendisse
+          potenti. Pellentesque habitant morbi tristique senectus et netus et
+          malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+          faucibus orci luctus et ultrices posuere cubilia curae; Integer ac sem
+          nec urna cursus faucibus. Nullam euismod, nisi eu consectetur
+          consectetur, nisl nisi consectetur nisi, euismod euismod nisi nisi
+          euismod.
+        </p>
+        <button class="hero-btn">Scopri di più</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    width: 100%;
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    width: 100%;
+    max-width: 900px;
+  }
+
+  .hero-image img {
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 1rem;
+    background: #eee;
+  }
+
+  .hero-text {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    color: var(--color-text-main, #222);
+  }
+
+  .hero-btn {
+    margin-top: 2rem;
+    padding: 0.75rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    background: var(--color-primary, #94b09f);
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .hero-btn:hover {
+    background: var(--color-primary-dark, #6f8f7c);
+  }
+
+  @media (max-width: 768px) {
+    .hero-content {
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .hero-image img {
+      width: 100%;
+      max-width: 350px;
+      height: auto;
+    }
+    .hero-text {
+      font-size: 1rem;
+      text-align: center;
+    }
+  }
+</style>
