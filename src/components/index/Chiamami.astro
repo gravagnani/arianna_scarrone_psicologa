@@ -1,6 +1,7 @@
 ---
 // No props for now
-import { Phone } from "@lucide/astro";
+import { Phone, Mail } from "@lucide/astro";
+import WhatsAppLogo from "../../assets/icons/whatsapp.svg";
 import { CONTACTS } from "../../config/contacts.ts";
 ---
 
@@ -12,9 +13,18 @@ import { CONTACTS } from "../../config/contacts.ts";
       di cui hai bisogno. Puoi chiamarmi direttamente per fissare un
       appuntamento o per ricevere una prima consulenza telefonica gratuita.
     </p>
-    <a href={`tel:${CONTACTS.phone}`} class="chiamami-btn">
-      <Phone class="button-icon" /> Chiamami
-    </a>
+    <div class="chiamami-buttons">
+      <a href={`tel:${CONTACTS.phone}`} class="chiamami-btn">
+        <Phone class="button-icon" /> Chiamami
+      </a>
+      <a href={`mailto:${CONTACTS.email}`} class="chiamami-btn">
+        <Mail class="button-icon" /> Scrivimi una email
+      </a>
+      <a href={`https://wa.me/${CONTACTS.phone}`} class="chiamami-btn">
+        <img class="button-icon" src={WhatsAppLogo.src} alt="WhatsApp" /> Scrivimi
+        su WhatsApp
+      </a>
+    </div>
   </div>
 </section>
 
@@ -45,10 +55,14 @@ import { CONTACTS } from "../../config/contacts.ts";
     color: var(--color-text-main, #222);
     margin-bottom: 2rem;
   }
+  .chiamami-buttons {
+    display: grid;
+    justify-content: center;
+    gap: 1rem;
+  }
   .chiamami-btn {
     display: inline-flex;
     align-items: center;
-    margin-top: 2rem;
     padding: 0.85rem 2.2rem;
     font-size: 1.13rem;
     font-weight: 600;
@@ -78,7 +92,7 @@ import { CONTACTS } from "../../config/contacts.ts";
       padding: 1.2rem 0.5rem;
     }
     #chiamami-section {
-      padding: 2rem 0.2rem;
+      padding: 2rem 0.7rem;
     }
   }
 </style>
