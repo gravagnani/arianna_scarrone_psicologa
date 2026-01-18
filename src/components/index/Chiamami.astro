@@ -1,0 +1,68 @@
+---
+// No props for now
+---
+
+<section id="chiamami-section">
+  <div class="chiamami-content">
+    <h2>Hai bisogno di aiuto o vuoi maggiori informazioni?</h2>
+    <p>
+      Non esitare a contattarmi: sono qui per ascoltarti e offrirti il supporto
+      di cui hai bisogno. Puoi chiamarmi direttamente per fissare un
+      appuntamento o per ricevere una prima consulenza telefonica gratuita.
+    </p>
+    <a href="tel:+391234567890" class="chiamami-btn">Chiamami</a>
+  </div>
+</section>
+
+<style>
+  #chiamami-section {
+    width: 100%;
+    padding: 3rem 1.5rem;
+    background: var(--color-primary-light, #c6d6cc);
+    display: flex;
+    justify-content: center;
+  }
+  .chiamami-content {
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    background: #fff;
+    padding: 2rem 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  }
+  .chiamami-content h2 {
+    font-size: 2rem;
+    color: var(--color-primary-dark, #6f8f7c);
+    margin-bottom: 1rem;
+  }
+  .chiamami-content p {
+    font-size: 1.15rem;
+    color: var(--color-text-main, #222);
+    margin-bottom: 2rem;
+  }
+  .chiamami-btn {
+    display: inline-block;
+    padding: 0.9rem 2.2rem;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #fff;
+    background: var(--color-primary, #94b09f);
+    border: none;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .chiamami-btn:hover {
+    background: var(--color-primary-dark, #6f8f7c);
+  }
+  @media (max-width: 600px) {
+    .chiamami-content {
+      padding: 1.2rem 0.5rem;
+    }
+    #chiamami-section {
+      padding: 2rem 0.2rem;
+    }
+  }
+</style>

@@ -1,9 +1,9 @@
 ---
 // No props for now
-import HeroImage from "../assets/hero-image.png";
+import HeroImage from "../../assets/hero-image.png";
 ---
 
-<section class="hero">
+<section id="hero" class="hero">
   <h1 class="hero-title">Benvenuto!</h1>
   <div class="hero-content">
     <div class="hero-image">
@@ -34,25 +34,37 @@ import HeroImage from "../assets/hero-image.png";
 
 <style>
   .hero {
+    width: 100%;
+    min-height: 60vh;
+    padding: 3rem 1rem 2rem 1rem;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
   }
 
   .hero-title {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
+    font-size: 2.7rem;
+    margin-bottom: 2.2rem;
     text-align: center;
+    color: var(--color-primary-dark, #6f8f7c);
+    font-weight: 700;
+    letter-spacing: -1px;
   }
 
   .hero-content {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: flex-start;
-    gap: 2rem;
+    align-items: stretch;
+    gap: 2.5rem;
     width: 100%;
-    max-width: 900px;
+    max-width: 1000px;
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+    padding: 2.2rem 2.5rem;
   }
 
   .hero-image img {
@@ -61,20 +73,22 @@ import HeroImage from "../assets/hero-image.png";
     object-fit: cover;
     border-radius: 1rem;
     background: #eee;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   }
 
   .hero-text {
     flex: 1;
     display: flex;
     align-items: center;
-    font-size: 1.2rem;
+    font-size: 1.18rem;
     color: var(--color-text-main, #222);
+    line-height: 1.7;
   }
 
   .hero-btn {
     margin-top: 2rem;
-    padding: 0.75rem 2rem;
-    font-size: 1.1rem;
+    padding: 0.85rem 2.2rem;
+    font-size: 1.13rem;
     font-weight: 600;
     color: #fff;
     background: var(--color-primary, #94b09f);
@@ -82,17 +96,19 @@ import HeroImage from "../assets/hero-image.png";
     border-radius: 0.5rem;
     cursor: pointer;
     transition: background 0.2s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
   }
 
   .hero-btn:hover {
     background: var(--color-primary-dark, #6f8f7c);
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
     .hero-content {
       flex-direction: column;
       align-items: center;
       gap: 1.5rem;
+      padding: 1.2rem 0.5rem;
     }
     .hero-image img {
       width: 100%;
@@ -100,7 +116,7 @@ import HeroImage from "../assets/hero-image.png";
       height: auto;
     }
     .hero-text {
-      font-size: 1rem;
+      font-size: 1.05rem;
       text-align: center;
     }
   }

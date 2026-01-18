@@ -1,10 +1,10 @@
 ---
-import ExpectationsImage from "../assets/expectations-image.jpg";
+import CosaAspettarsiImage from "../../assets/cosa-aspettarsi-image.jpg";
 ---
 
-<section class="expectations">
-  <div class="expectations-content">
-    <div class="expectations-text">
+<section id="cosa-aspettarsi">
+  <div class="cosa-aspettarsi-content">
+    <div class="cosa-aspettarsi-text">
       <h2>Cosa aspettarsi dalla mia consulenza psicologica</h2>
       <h3>Accoglienza e ascolto</h3>
       <p>
@@ -27,14 +27,14 @@ import ExpectationsImage from "../assets/expectations-image.jpg";
         deontologia professionale.
       </p>
     </div>
-    <div class="expectations-image">
-      <img src={ExpectationsImage.src} alt="Sessione psicologica" />
+    <div class="cosa-aspettarsi-image">
+      <img src={CosaAspettarsiImage.src} alt="Sessione psicologica" />
     </div>
   </div>
 </section>
 
 <style>
-  .expectations {
+  #cosa-aspettarsi {
     width: 100%;
     padding: 4rem 2rem;
     display: flex;
@@ -42,7 +42,7 @@ import ExpectationsImage from "../assets/expectations-image.jpg";
     align-items: center;
   }
 
-  .expectations-content {
+  .cosa-aspettarsi-content {
     display: flex;
     flex-direction: row;
     gap: 3rem;
@@ -51,7 +51,7 @@ import ExpectationsImage from "../assets/expectations-image.jpg";
     align-items: stretch;
   }
 
-  .expectations-text {
+  .cosa-aspettarsi-text {
     flex: 2;
     display: flex;
     flex-direction: column;
@@ -59,29 +59,29 @@ import ExpectationsImage from "../assets/expectations-image.jpg";
     font-size: 1.15rem;
     color: var(--color-text-main, #222);
   }
-  .expectations-text h2 {
+  .cosa-aspettarsi-text h2 {
     font-size: 2rem;
     margin-bottom: 1.5rem;
     color: var(--color-primary-dark, #6f8f7c);
   }
-  .expectations-text h3 {
+  .cosa-aspettarsi-text h3 {
     font-size: 1.25rem;
     margin-top: 1.5rem;
     margin-bottom: 0.5rem;
     color: var(--color-primary, #94b09f);
   }
-  .expectations-text p {
+  .cosa-aspettarsi-text p {
     margin-bottom: 1rem;
     line-height: 1.7;
   }
 
-  .expectations-image {
+  .cosa-aspettarsi-image {
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  .expectations-image img {
+  .cosa-aspettarsi-image img {
     width: 100%;
     max-width: 350px;
     height: 500px;
@@ -91,12 +91,12 @@ import ExpectationsImage from "../assets/expectations-image.jpg";
   }
 
   @media (max-width: 900px) {
-    .expectations-content {
+    .cosa-aspettarsi-content {
       flex-direction: column;
       gap: 2rem;
       align-items: center;
     }
-    .expectations-image img {
+    .cosa-aspettarsi-image img {
       max-width: 100%;
       height: 300px;
     }

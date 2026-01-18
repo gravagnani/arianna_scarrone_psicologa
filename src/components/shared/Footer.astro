@@ -1,0 +1,122 @@
+---
+// No props for now
+import Logo from "../../assets/logos/logo2.svg";
+import { PATHS } from "../../config/paths.ts";
+---
+
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-info">
+      <Logo class="footer-logo" />
+      <div class="footer-about">
+        <div class="footer-title">Arianna Scarrone</div>
+        <div class="footer-role">Psicologa</div>
+        <div class="footer-address">Via Esempio 123, 10100 Torino</div>
+      </div>
+    </div>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      {
+        PATHS.map((link) => (
+          <a href={link.href} class="footer-link">
+            {link.text}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
+  <div class="footer-copyright">
+    &copy; {new Date().getFullYear()} Arianna Scarrone - Psicologa
+  </div>
+</footer>
+
+<style>
+  .footer {
+    width: 100%;
+    background: var(--color-primary-dark, #6f8f7c);
+    color: #fff;
+    padding: 2rem 1rem 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-content {
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  .footer-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .footer-logo {
+    width: 60px;
+    height: auto;
+  }
+  .footer-about {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  .footer-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+  .footer-role {
+    font-size: 1.05rem;
+    color: var(--color-primary-light, #c6d6cc);
+  }
+  .footer-address {
+    font-size: 0.98rem;
+    color: #e5ebe7;
+  }
+  .footer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+  .footer-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition:
+      text-decoration 0.2s,
+      color 0.2s;
+  }
+  .footer-link:hover {
+    text-decoration: underline;
+    color: var(--color-primary-light, #c6d6cc);
+  }
+  .footer-copyright {
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    color: #e5ebe7;
+    margin-top: 2rem;
+    padding-bottom: 0.5rem;
+  }
+  @media (max-width: 700px) {
+    .footer-content {
+      flex-direction: column;
+      align-items: center;
+      gap: 1.2rem;
+    }
+    .footer-info {
+      flex-direction: column;
+      align-items: center;
+      gap: 0.7rem;
+    }
+    .footer-nav {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+  }
+</style>

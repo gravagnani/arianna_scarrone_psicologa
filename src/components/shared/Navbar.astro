@@ -1,18 +1,11 @@
 ---
-import Logo from "../assets/logos/logo.svg";
+import Logo from "../../assets/logos/logo2.svg";
 import { Phone, Mail } from "@lucide/astro";
+import { PATHS } from "../../config/paths.ts";
 
 const navbarContacts = [
   { logo: Phone, text: "(123) 456-7890" },
   { logo: Mail, text: "8W5Q9@example.com" },
-];
-
-const navbarLinks = [
-  { href: "/", text: "Chi sono" },
-  { href: "/#come-lavoro", text: "Come lavoro" },
-  { href: "/#come-posso-aiutarti", text: "Come posso aiutarti" },
-  { href: "/studio", text: "Lo studio" },
-  { href: "/faq", text: "FAQ" },
 ];
 ---
 
@@ -31,7 +24,7 @@ const navbarLinks = [
 
   <!-- MAIN NAV -->
   <nav id="links" aria-label="Main navigation">
-    <Logo class="logo" />
+    <Logo class="logo" href="/" />
 
     <button id="menu-toggle" aria-label="Toggle menu" type="button">
       <span></span>
@@ -40,7 +33,7 @@ const navbarLinks = [
     </button>
 
     <div id="nav-menu">
-      {navbarLinks.map((link) => <a href={link.href}>{link.text}</a>)}
+      {PATHS.map((link) => <a href={link.href}>{link.text}</a>)}
 
       <!-- MOBILE CONTACTS -->
       <div id="contacts-mobile">

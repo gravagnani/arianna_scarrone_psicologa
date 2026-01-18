@@ -1,0 +1,97 @@
+---
+import StudioImage from "../../assets/cosa-aspettarsi-image.jpg";
+---
+
+<section class="location-hero">
+  <div class="location-hero-content">
+    <div class="location-hero-text">
+      <h1>Dove ricevo</h1>
+      <h2>Il mio studio a Torino</h2>
+      <p>
+        Il mio studio si trova in una zona tranquilla e facilmente raggiungibile
+        di Torino, pensata per offrire un ambiente accogliente, riservato e
+        confortevole. Qui potrai sentirti a tuo agio e trovare lo spazio giusto
+        per lavorare su di te, con la massima privacy e serenità.
+      </p>
+      <p>
+        Lo studio è facilmente accessibile sia con i mezzi pubblici che in auto,
+        con possibilità di parcheggio nelle vicinanze. L’ambiente è curato nei
+        dettagli per favorire il benessere e la concentrazione durante le
+        sedute.
+      </p>
+      <p>
+        Ricevo su appuntamento, dal lunedì al venerdì. Per qualsiasi
+        informazione o per fissare un incontro, non esitare a contattarmi.
+      </p>
+    </div>
+    <div class="location-hero-image">
+      <img src={StudioImage.src} alt="Studio psicologico a Torino" />
+    </div>
+  </div>
+</section>
+
+<style>
+  .location-hero {
+    width: 100%;
+    padding: 4rem 2rem;
+    background: var(--color-bg-soft, #f5f7f6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .location-hero-content {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    max-width: 1100px;
+    width: 100%;
+    align-items: stretch;
+  }
+  .location-hero-text {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1.15rem;
+    color: var(--color-text-main, #222);
+  }
+  .location-hero-text h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.7rem;
+    color: var(--color-primary-dark, #6f8f7c);
+  }
+  .location-hero-text h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+    color: var(--color-primary, #94b09f);
+  }
+  .location-hero-text p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+  }
+  .location-hero-image {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .location-hero-image img {
+    width: 100%;
+    max-width: 350px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 1rem;
+    background: #eee;
+  }
+  @media (max-width: 900px) {
+    .location-hero-content {
+      flex-direction: column;
+      gap: 2rem;
+      align-items: center;
+    }
+    .location-hero-image img {
+      max-width: 100%;
+      height: 300px;
+    }
+  }
+</style>
