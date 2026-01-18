@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import CosaAspettarsiImage from "../../assets/cosa-aspettarsi-image.jpg";
 ---
 
@@ -28,7 +29,7 @@ import CosaAspettarsiImage from "../../assets/cosa-aspettarsi-image.jpg";
       </p>
     </div>
     <div class="cosa-aspettarsi-image">
-      <img src={CosaAspettarsiImage.src} alt="Sessione psicologica" />
+      <Image src={CosaAspettarsiImage} alt="Sessione psicologica" />
     </div>
   </div>
 </section>

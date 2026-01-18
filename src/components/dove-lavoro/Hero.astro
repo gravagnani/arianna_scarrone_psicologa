@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import StudioImage from "../../assets/cosa-aspettarsi-image.jpg";
 ---
 
@@ -25,7 +26,7 @@ import StudioImage from "../../assets/cosa-aspettarsi-image.jpg";
       </p>
     </div>
     <div class="location-hero-image">
-      <img src={StudioImage.src} alt="Studio psicologico a Torino" />
+      <Image src={StudioImage} alt="Studio psicologico a Torino" />
     </div>
   </div>
 </section>

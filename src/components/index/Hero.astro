@@ -1,40 +1,47 @@
 ---
 // No props for now
-import HeroImage from "../../assets/hero-image.jpg";
+import { Image } from "astro:assets";
+import HeroImage from "../../assets/hero-image2.jpg";
 import WhatsAppLogo from "../../assets/icons/whatsapp.svg";
-import { Phone } from "@lucide/astro";
-import { CONTACTS } from "../../config/contacts.ts";
+import { Contact } from "@lucide/astro";
 ---
 
 <section id="hero" class="hero">
   <h1 class="hero-title">Cerchi uno psicologo a Padova?</h1>
   <div class="hero-content">
     <div class="hero-image">
-      <img src={HeroImage.src} alt="Hero Image" />
+      <Image src={HeroImage} alt="Hero Image" />
     </div>
     <div class="hero-text">
       <div>
         <p class="hero-description">
-          Mi chiamo Arianna Scarrone e sono una psicologa a Genova, appassionata
-          di benessere mentale e crescita personale. Da anni accompagno adulti,
-          adolescenti e bambini nel percorso di scoperta di sé, offrendo
-          ascolto, supporto e strumenti pratici per affrontare ansia, stress,
-          difficoltà relazionali, gestione delle emozioni, autostima, lutto e
-          cambiamenti di vita. Credo che ogni persona abbia le risorse per
-          superare le proprie sfide: il mio ruolo è aiutarti a ritrovarle e
-          valorizzarle, in uno spazio sicuro e senza giudizio. Personalizzo ogni
-          percorso in base alle esigenze e agli obiettivi di chi si rivolge a
-          me. Oltre al lavoro individuale, organizzo incontri di gruppo e
-          laboratori tematici per promuovere consapevolezza, comunicazione
-          efficace e benessere psicologico.
+          Mi chiamo <b>Arianna Scarrone</b> e sono una <b>psicologa</b> a <b
+            >Genova</b
+          >, appassionata di <b>benessere mentale</b> e <b>crescita personale</b
+          >. Da anni accompagno <b>adulti</b>,
+          <b>adolescenti</b> e <b>bambini</b> nel percorso di scoperta di sé, offrendo
+          <b>ascolto</b>, <b>supporto</b> e <b>strumenti pratici</b> per affrontare
+          <b>ansia</b>, <b>stress</b>,
+          <b>difficoltà relazionali</b>, <b>gestione delle emozioni</b>, <b
+            >autostima</b
+          >, <b>lutto</b> e
+          <b>cambiamenti di vita</b>. Credo che ogni persona abbia le <b
+            >risorse</b
+          > per superare le proprie sfide: il mio ruolo è aiutarti a <b
+            >ritrovarle</b
+          > e
+          <b>valorizzarle</b>, in uno <b>spazio sicuro</b> e senza giudizio. Personalizzo
+          ogni percorso in base alle <b>esigenze</b> e agli <b>obiettivi</b> di chi
+          si rivolge a me. Oltre al lavoro individuale, organizzo <b
+            >incontri di gruppo</b
+          > e
+          <b>laboratori tematici</b> per promuovere <b>consapevolezza</b>, <b
+            >comunicazione efficace</b
+          > e <b>benessere psicologico</b>.
         </p>
-        <a href={`https://wa.me/${CONTACTS.phone}`} class="hero-btn">
-          <img class="button-icon" src={WhatsAppLogo.src} alt="WhatsApp" />
-          Scrivimi su WhatsApp
-        </a>
-        <a href={`tel:${CONTACTS.phone}`} class="hero-btn">
-          <Phone class="button-icon" />
-          Chiamami
+        <a href="#chiamami" class="hero-btn">
+          <Contact class="button-icon" />
+          Contattami
         </a>
       </div>
     </div>

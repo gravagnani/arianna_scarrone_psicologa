@@ -5,8 +5,8 @@ import { PATHS } from "../../config/paths.ts";
 import { CONTACTS } from "../../config/contacts.ts";
 
 const navbarContacts = [
-  { logo: Phone, text: CONTACTS.phone },
-  { logo: Mail, text: CONTACTS.email },
+  { logo: Phone, text: CONTACTS.phone, link: `tel:${CONTACTS.phone}` },
+  { logo: Mail, text: CONTACTS.email, link: `mailto:${CONTACTS.email}` },
 ];
 ---
 
@@ -17,7 +17,7 @@ const navbarContacts = [
       navbarContacts.map((contact) => (
         <div class="contact">
           <contact.logo class="icon" />
-          <span>{contact.text}</span>
+          <a href={contact.link}>{contact.text}</a>
         </div>
       ))
     }
@@ -144,6 +144,15 @@ const navbarContacts = [
     gap: 5px;
     font-size: 14px;
     color: var(--color-text-secondary);
+  }
+
+  .contact a {
+    text-decoration: none;
+    color: var(--color-text-secondary);
+  }
+
+  .contact a:hover {
+    text-decoration: underline;
   }
 
   nav a {
