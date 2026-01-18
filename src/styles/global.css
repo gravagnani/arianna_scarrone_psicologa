@@ -19,6 +19,7 @@
   --color-text-main: #2f3a35;
   --color-text-muted: #5f6f68;
   --color-text-subtle: #8a9a92;
+  --color-text-light: #e5ebe7;
 
   /* UI */
   --color-border: #d8e0db;
@@ -87,7 +88,6 @@ section {
 
 @media (max-width: 600px) {
   section {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+    padding: 1rem 0.5rem;
   }
 }
