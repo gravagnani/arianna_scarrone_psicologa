@@ -1,6 +1,9 @@
 ---
 // No props for now
-import HeroImage from "../../assets/hero-image.png";
+import HeroImage from "../../assets/hero-image.jpg";
+import WhatsAppLogo from "../../assets/icons/whatsapp.svg";
+import { Phone } from "@lucide/astro";
+import { CONTACTS } from "../../config/contacts.ts";
 ---
 
 <section id="hero" class="hero">
@@ -11,22 +14,31 @@ import HeroImage from "../../assets/hero-image.png";
     </div>
     <div class="hero-text">
       <div>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-          euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi,
-          euismod euismod nisi nisi euismod. Sed cursus, velit nec pulvinar
-          dictum, enim erat facilisis urna, nec dictum erat urna a erat. Etiam
-          euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, eget
-          aliquam nisl nunc eu nunc. Mauris euismod, nisl eu aliquam tincidunt,
-          nunc nisl aliquam nunc, eget aliquam nunc nunc eu nunc. Suspendisse
-          potenti. Pellentesque habitant morbi tristique senectus et netus et
-          malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
-          faucibus orci luctus et ultrices posuere cubilia curae; Integer ac sem
-          nec urna cursus faucibus. Nullam euismod, nisi eu consectetur
-          consectetur, nisl nisi consectetur nisi, euismod euismod nisi nisi
-          euismod.
+        <p class="hero-description">
+          Mi chiamo Arianna Scarrone e sono una psicologa a Genova, appassionata
+          di benessere mentale e crescita personale. Da anni accompagno adulti,
+          adolescenti e bambini nel percorso di scoperta di sé, offrendo
+          ascolto, supporto e strumenti pratici per affrontare ansia, stress,
+          difficoltà relazionali, gestione delle emozioni, autostima, lutto e
+          cambiamenti di vita. Credo che ogni persona abbia le risorse per
+          superare le proprie sfide: il mio ruolo è aiutarti a ritrovarle e
+          valorizzarle, in uno spazio sicuro e senza giudizio. Personalizzo ogni
+          percorso in base alle esigenze e agli obiettivi di chi si rivolge a
+          me. Oltre al lavoro individuale, organizzo incontri di gruppo e
+          laboratori tematici per promuovere consapevolezza, comunicazione
+          efficace e benessere psicologico. Collaboro con scuole e associazioni
+          per diffondere la cultura della prevenzione e dell’educazione emotiva.
+          Se senti il bisogno di prenderti cura di te, contattami: il
+          cambiamento inizia da un piccolo passo.
         </p>
-        <button class="hero-btn">Scopri di più</button>
+        <a href={`https://wa.me/${CONTACTS.phone}`} class="hero-btn">
+          <img class="button-icon" src={WhatsAppLogo.src} alt="WhatsApp" />
+          Scrivimi su WhatsApp
+        </a>
+        <a href={`tel:${CONTACTS.phone}`} class="hero-btn">
+          <Phone class="button-icon" />
+          Chiamami
+        </a>
       </div>
     </div>
   </div>
@@ -36,8 +48,7 @@ import HeroImage from "../../assets/hero-image.png";
   .hero {
     width: 100%;
     min-height: 60vh;
-    padding: 3rem 1rem 2rem 1rem;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding-top: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -63,7 +74,7 @@ import HeroImage from "../../assets/hero-image.png";
     max-width: 1000px;
     background: rgba(255, 255, 255, 0.92);
     border-radius: 1.5rem;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
     padding: 2.2rem 2.5rem;
   }
 
@@ -85,7 +96,13 @@ import HeroImage from "../../assets/hero-image.png";
     line-height: 1.7;
   }
 
+  .hero-description {
+    margin: 0;
+  }
+
   .hero-btn {
+    display: inline-flex;
+    align-items: center;
     margin-top: 2rem;
     padding: 0.85rem 2.2rem;
     font-size: 1.13rem;
@@ -97,10 +114,19 @@ import HeroImage from "../../assets/hero-image.png";
     cursor: pointer;
     transition: background 0.2s;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    text-decoration: none;
   }
 
   .hero-btn:hover {
     background: var(--color-primary-dark, #6f8f7c);
+  }
+
+  .button-icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0.7rem;
+    width: 30px;
+    height: 30px;
   }
 
   @media (max-width: 900px) {

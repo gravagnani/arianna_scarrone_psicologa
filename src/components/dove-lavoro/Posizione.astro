@@ -1,5 +1,6 @@
 ---
 // No props for now
+import { CONTACTS } from "../../config/contacts.ts";
 ---
 
 <section class="posizione-section">
@@ -29,7 +30,7 @@
     </div>
     <div class="posizione-map">
       <iframe
-        src="https://www.google.com/maps?q=45.0703,7.6869&z=16&output=embed"
+        src={`https://www.google.com/maps?q=${encodeURIComponent(CONTACTS.address)}&output=embed`}
         width="100%"
         height="350"
         style="border:0; border-radius: 1rem;"
