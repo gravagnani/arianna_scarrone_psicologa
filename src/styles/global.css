@@ -49,6 +49,10 @@
   --gap-md: var(--space-md);
   --gap-lg: var(--space-lg);
   --gap-xl: var(--space-xl);
+
+  /* Space for Navbar */
+  --navbar-height: 88px;
+  --navbar-height-mobile: 16px;
 }
 
 * {
