@@ -3,7 +3,7 @@
 import { CONTACTS } from "../../config/contacts.ts";
 ---
 
-<section class="posizione-section">
+<section id="posizione">
   <div class="posizione-content">
     <div class="posizione-text">
       <h2>Come raggiungere lo studio</h2>
@@ -43,7 +43,7 @@ import { CONTACTS } from "../../config/contacts.ts";
 </section>
 
 <style>
-  .posizione-section {
+  #posizione {
     width: 100%;
     padding: 3rem 2rem;
     background: #fff;
@@ -91,8 +91,8 @@ import { CONTACTS } from "../../config/contacts.ts";
     min-height: 350px;
   }
   @media (max-width: 900px) {
-    .posizione-section {
-      padding: 2rem 0.7rem;
+    #posizione {
+      padding: var(--space-xl) 0.7rem;
     }
     .posizione-content {
       flex-direction: column;

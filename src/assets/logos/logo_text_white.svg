@@ -7,7 +7,7 @@
    height="300"
    sodipodi:docname="logo_text_white.svg"
    inkscape:version="1.2.2 (b0a84865, 2022-12-01)"
-   inkscape:export-filename="logo.png"
+   inkscape:export-filename="logo_text_dark.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -39,9 +39,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      showgrid="false"
-     inkscape:zoom="0.80243472"
-     inkscape:cx="292.85871"
-     inkscape:cy="228.67904"
+     inkscape:zoom="1.3808214"
+     inkscape:cx="302.35626"
+     inkscape:cy="202.41575"
      inkscape:window-width="1680"
      inkscape:window-height="931"
      inkscape:window-x="0"
@@ -211,9 +211,12 @@
        sodipodi:nodetypes="cccccccc" />
     <path
        id="path270-8"
-       style="display:inline;mix-blend-mode:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.914385"
-       d="m 178.25621,83.824959 c -0.099,0.03119 -0.40094,0.21936 -0.47852,0.265625 -2.20518,4.479094 0.31928,16.396406 7.38281,14.636719 2.06748,-1.885139 2.23519,-3.989498 1.51758,-6.529297 -1.34018,-4.751927 -4.16279,-6.069457 -8.42187,-8.373047 z m 2.08593,3.345704 c 2.16833,1.736714 6.60511,7.382713 3.22657,9.623046 -2.20905,-1.311257 -3.52888,-3.377449 -4.02344,-5.689453 -0.23469,-1.098707 -0.74887,-3.541955 0.79687,-3.933593 z"
-       transform="translate(16.32973,1.3684)" />
+       style="display:inline;mix-blend-mode:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.725161"
+       d="m 195.51991,87.5502 c 0.0785,0.02474 0.31797,0.173966 0.37949,0.210656 1.74884,3.552183 -0.2532,13.003314 -5.855,11.607773 -1.63963,-1.495025 -1.77263,-3.163905 -1.20353,-5.178114 1.06285,-3.768555 3.30134,-4.813433 6.67904,-6.640315 z m -1.65427,2.653339 c -1.71961,1.377315 -5.23823,5.854922 -2.55885,7.631637 1.7519,-1.039903 2.7986,-2.678514 3.19082,-4.512068 0.18612,-0.871339 0.5939,-2.808977 -0.63197,-3.119569 z" />
+    <path
+       id="path270-8-5"
+       style="display:inline;mix-blend-mode:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.628637"
+       d="m 174.92804,88.488392 c -0.0681,0.02144 -0.27565,0.150809 -0.32898,0.182616 -1.51606,3.079366 0.2195,11.272492 5.07566,10.062712 1.42139,-1.29603 1.53669,-2.742774 1.04333,-4.48888 -0.92137,-3.266937 -2.8619,-4.172736 -5.79001,-5.756448 z m 1.43407,2.300163 c 1.49072,1.193986 4.541,5.075596 2.21826,6.615825 -1.51872,-0.90149 -2.4261,-2.321993 -2.76611,-3.91149 -0.16134,-0.755358 -0.51484,-2.435085 0.54785,-2.704335 z" />
     <path
        id="path274"
        style="display:inline;mix-blend-mode:normal;fill:#ffffff;fill-opacity:1"
@@ -261,16 +264,22 @@
        transform="translate(16.32973,1.3684)"
        sodipodi:nodetypes="sccccccsccccc" />
     <path
-       d="m 166.64315,82.28992 c 2.86956,0.46512 4.20464,5.91976 4.48347,8.34536 0.75444,6.5621 2.21411,13.52903 1.72157,20.11573 -0.0226,0.30081 -1.00282,1.2252 -1.25161,1.46431 -0.81391,0.15968 -1.11331,0.0939 -1.73004,-0.29012 -0.73407,-1.44919 0.50726,-3.18044 0.18246,-4.95847 -0.89073,-4.87702 -4.63629,-20.26008 -3.40585,-24.67681 z"
+       d="m 165.79634,83.059744 c 2.86956,0.46512 3.99445,5.303901 4.27328,7.729501 1.94699,11.763065 1.93071,12.906765 4.10397,19.434725 11.55444,10.24409 3.07934,8.68066 2.83055,8.91977 -0.81391,0.15968 -4.46221,-3.62216 -7.1376,-7.21854 -0.73407,-1.44919 -1.34032,-3.59565 -1.66512,-5.37368 -0.89073,-4.87702 -3.63552,-19.075046 -2.40508,-23.491776 z"
        fill="#fefefe"
        id="path306"
        style="display:inline;mix-blend-mode:normal;fill:#ffffff;fill-opacity:1"
-       transform="translate(16.32973,1.3684)" />
+       transform="translate(16.32973,1.3684)"
+       sodipodi:nodetypes="ccccccc" />
     <path
        id="path308"
        style="display:inline;mix-blend-mode:normal;fill:#ffffff;fill-opacity:1"
        d="m 243.29527,99.524178 c -0.55386,0.01303 -1.11498,0.05494 -1.68555,0.125 -12.83869,2.398992 -5.11447,8.439452 4.36133,7.095702 2.49798,-0.62681 4.99918,-1.26805 7.15039,-2.77148 -2.51386,-3.20292 -5.94912,-4.540413 -9.82617,-4.449222 z m -0.4082,2.335942 c 2.03988,0.0167 5.37959,0.34404 6.0332,1.41406 -0.60427,0.986 -2.09587,0.96954 -3.10742,1.12305 -3.59677,0.36471 -5.02017,0.0781 -8.1875,-1.37696 1.67742,-0.79839 2.25057,-0.97614 4.10742,-1.12695 0.28352,-0.0238 0.68356,-0.0371 1.1543,-0.0332 z"
        transform="translate(16.32973,1.3684)"
+       sodipodi:nodetypes="scccssccccs" />
+    <path
+       id="path308-0"
+       style="display:inline;mix-blend-mode:normal;fill:#ffffff;fill-opacity:1"
+       d="m 194.0238,69.445579 c 0.55386,-0.013 1.11498,-0.0549 1.68555,-0.125 12.83869,-2.39899 5.11447,-8.43945 -4.36133,-7.0957 -2.49798,0.62681 -4.99918,1.26805 -7.15039,2.77148 2.51386,3.20291 5.94912,4.54041 9.82617,4.44922 z m 0.4082,-2.33594 c -2.03988,-0.0167 -5.37959,-0.34404 -6.0332,-1.41406 0.60427,-0.986 2.09587,-0.96954 3.10742,-1.12305 3.59677,-0.36471 5.02017,-0.0781 8.1875,1.37696 -1.67742,0.79839 -2.25057,0.97614 -4.10742,1.12695 -0.28352,0.0238 -0.68356,0.0371 -1.1543,0.0332 z"
        sodipodi:nodetypes="scccssccccs" />
     <path
        id="path312"
@@ -305,19 +314,19 @@
      transform="matrix(2.1168964,0,0,1.9332572,-427.1216,-19.450196)"><tspan
        x="350.18359"
        y="63.851476"
-       id="tspan1244"><tspan
+       id="tspan2334"><tspan
          style="font-weight:bold;font-family:'Bodoni 72 Smallcaps';-inkscape-font-specification:'Bodoni 72 Smallcaps,  Bold'"
-         id="tspan1242">Arianna
+         id="tspan2332">Arianna
 </tspan></tspan><tspan
        x="350.18359"
        y="103.00005"
-       id="tspan1248"><tspan
+       id="tspan2338"><tspan
          style="font-weight:bold;font-family:'Bodoni 72 Smallcaps';-inkscape-font-specification:'Bodoni 72 Smallcaps,  Bold'"
-         id="tspan1246">Scarrone
+         id="tspan2336">Scarrone
 </tspan></tspan><tspan
        x="350.18359"
        y="140.96358"
-       id="tspan1252"><tspan
+       id="tspan2342"><tspan
          style="font-weight:bold;font-size:21.0909px;font-family:AppleMyungjo;-inkscape-font-specification:'AppleMyungjo Bold'"
-         id="tspan1250">PSICOLOGA</tspan></tspan></text>
+         id="tspan2340">PSICOLOGA</tspan></tspan></text>
 </svg>

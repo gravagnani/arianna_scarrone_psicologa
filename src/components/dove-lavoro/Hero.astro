@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 import StudioImage from "../../assets/cosa-aspettarsi-image.jpg";
 ---
 
-<section class="location-hero">
+<section id="location">
   <div class="location-hero-content">
     <div class="location-hero-text">
       <h1>Dove ricevo</h1>
@@ -32,7 +32,7 @@ import StudioImage from "../../assets/cosa-aspettarsi-image.jpg";
 </section>
 
 <style>
-  .location-hero {
+  #location {
     width: 100%;
     background: var(--color-bg-soft, #f5f7f6);
     display: flex;
@@ -85,6 +85,9 @@ import StudioImage from "../../assets/cosa-aspettarsi-image.jpg";
     background: #eee;
   }
   @media (max-width: 900px) {
+    #location {
+      padding-top: var(--space-xxxl);
+    }
     .location-hero-content {
       flex-direction: column;
       gap: 2rem;
