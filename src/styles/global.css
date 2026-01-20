@@ -17,6 +17,7 @@
 
   /* Text */
   --color-text-main: #2f3a35;
+  --color-text-secondary: #e5ebe7;
   --color-text-muted: #5f6f68;
   --color-text-subtle: #8a9a92;
   --color-text-light: #e5ebe7;
@@ -50,9 +51,58 @@
   --gap-lg: var(--space-lg);
   --gap-xl: var(--space-xl);
 
-  /* Space for Navbar */
-  --navbar-height: 88px;
-  --navbar-height-mobile: 16px;
+  /* Navbar System */
+  --navbar-height: 180px;
+  --navbar-height-mobile: 100px;
+  --navbar-height-scrolled: 60px;
+  --navbar-logo-height: 120px;
+  --navbar-logo-height-mobile: 80px;
+  --navbar-logo-height-scrolled: 40px;
+  --navbar-transition: 0.3s ease;
+  --navbar-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  --navbar-z-index: 1000;
+
+  /* Icon sizes */
+  --icon-sm: 16px;
+  --icon-md: 24px;
+  --icon-lg: 32px;
+
+  /* Border radius */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+
+  /* Z-index scale */
+  --z-navbar: 1000;
+  --z-menu-toggle: 1001;
+  --z-modal: 2000;
+
+  /* Menu */
+  --menu-width-mobile: 70%;
+  --menu-width-mobile-max: 300px;
+  --menu-shadow: -14px 0px 20px 10px rgba(0, 0, 0, 0.5);
+
+  /* Hamburger menu */
+  --hamburger-width: 25px;
+  --hamburger-height: 3px;
+  --hamburger-gap: 4px;
+
+  /* Font sizes */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+
+  /* Breakpoints (for JS use if needed) */
+  --breakpoint-mobile: 480px;
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 1024px;
 }
 
 * {
