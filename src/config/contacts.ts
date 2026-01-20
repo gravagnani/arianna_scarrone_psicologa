@@ -2,7 +2,9 @@
 // Centralized path configuration for contact information
 
 export const CONTACTS = {
+  name: "Arianna Scarrone",
+  vatNumber: "02860290094",
   phone: "+391234567890",
-  email: "ariannascarrone@me.com",
+  email: "ariannascarrone.psicologa@gmail.com",
   address: "Via Bernardo Gonzati 3, Padova, Italia",
 };

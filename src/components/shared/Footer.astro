@@ -26,7 +26,12 @@ import { CONTACTS } from "../../config/contacts.ts";
     </nav>
   </div>
   <div class="footer-copyright">
-    &copy; {new Date().getFullYear()} Arianna Scarrone - Psicologa - P.IVA 02860290094
+    <span>
+      &copy; {new Date().getFullYear()}
+      {CONTACTS.name}. All rights reserved
+    </span>
+    <span class="delimiter"> | </span>
+    <span>P.IVA {CONTACTS.vatNumber}</span>
   </div>
   <div class="footer-credit">Made with ❤️ by Giuseppe Ravagnani</div>
 </footer>
@@ -36,7 +41,6 @@ import { CONTACTS } from "../../config/contacts.ts";
     width: 100%;
     background: var(--color-primary, #6f8f7c);
     color: white;
-    padding: 2rem 1rem 1rem 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -44,6 +48,7 @@ import { CONTACTS } from "../../config/contacts.ts";
   .footer-content {
     width: 100%;
     max-width: 1100px;
+    padding: 2rem 1rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -97,10 +102,14 @@ import { CONTACTS } from "../../config/contacts.ts";
   }
   .footer-copyright {
     width: 100%;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    column-gap: 1rem;
+    flex-wrap: wrap;
     text-align: center;
     font-size: 1rem;
     color: var(--color-text-light, #e5ebe7);
-    padding: 1rem 0;
     border-bottom: 1px solid var(--color-primary-light, #c6d6cc);
   }
   .footer-credit {
@@ -109,7 +118,7 @@ import { CONTACTS } from "../../config/contacts.ts";
     text-align: center;
     font-size: 0.9rem;
     color: var(--color-text-light, #e5ebe7);
-    margin-top: 1rem;
+    padding: 1rem;
   }
   @media (max-width: 700px) {
     .footer-content {
@@ -127,6 +136,11 @@ import { CONTACTS } from "../../config/contacts.ts";
       flex-wrap: wrap;
       gap: 1rem;
       justify-content: center;
+      border: 1px solid;
+      padding: 1rem;
+    }
+    .footer-copyright .delimiter {
+      display: none;
     }
   }
 </style>
