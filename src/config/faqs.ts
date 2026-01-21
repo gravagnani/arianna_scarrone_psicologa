@@ -1,45 +1,36 @@
 // src/config/faqs.ts
-// Centralized path configuration for faqs
+// Centralized FAQ configuration
 
 export const FAQS = [
   {
-    question: "Come si svolge la prima seduta?",
+    question: "Cosa avviene quando decidi di contattarmi?",
     answer:
-      "La prima seduta è dedicata alla conoscenza reciproca e alla raccolta delle informazioni principali sulla tua storia e sulle tue esigenze. È un momento di ascolto e accoglienza.",
+      "Si inizierà con una breve telefonata. La chiamata conoscitiva è un primo contatto, breve, gratuito e senza impegno, che permette di conoscersi e valutare la possibilità di iniziare un percorso psicologico. Potrai chiedermi tutte le informazioni di cui hai bisogno e condividere il motivo della richiesta. Poi si potrà eventualmente fissare il primo colloquio conoscitivo.",
   },
   {
-    question: "Quanto dura una seduta?",
+    question: "In cosa consiste il primo colloquio?",
     answer:
-      "Ogni seduta dura generalmente 50 minuti, ma può variare leggermente in base alle necessità del percorso.",
+      "Il primo colloquio è uno spazio di incontro pensato per accogliere la richiesta e iniziare a dare forma al percorso. È un'occasione per raccontare ciò che ti ha portato a chiedere supporto, senza pressioni e senza la necessità di avere tutto chiaro fin da subito. Durante l'incontro viene dato spazio ai tuoi vissuti, alle domande e alle aspettative, con l'obiettivo di comprendere insieme il tuo bisogno. Oltre a ciò ti verrà fornito il preventivo, l'informativa relativa al trattamento dei dati personali e il consenso informato.",
   },
   {
-    question: "Con quale frequenza si svolgono gli incontri?",
+    question: "Il costo delle sedute è detraibile ai fini fiscali?",
     answer:
-      "La frequenza viene concordata insieme, in base alle tue esigenze e agli obiettivi del percorso. Solitamente è settimanale o quindicinale.",
+      "Sì, il costo delle sedute è detraibile in dichiarazione dei redditi in quanto rientra tra le prestazioni sanitarie, anche quando il colloquio viene svolto online. È sufficiente che la fattura venga pagata tramite modalità di pagamento tracciabili, come previsto dalla normativa vigente.",
   },
   {
-    question: "La consulenza è riservata?",
+    question: "È possibile svolgere i colloqui online?",
     answer:
-      "Assolutamente sì. Tutto ciò che viene condiviso durante le sedute è coperto dal segreto professionale e dalla massima riservatezza.",
+      "Sì, è possibile svolgere i colloqui anche online, tramite piattaforma Meet.",
   },
   {
-    question: "Posso interrompere il percorso in qualsiasi momento?",
+    question:
+      "Le informazioni condivise durante le sedute rimangono riservate?",
     answer:
-      "Sì, puoi interrompere il percorso quando lo desideri. È consigliabile parlarne insieme per concludere in modo consapevole.",
+      "Assolutamente sì, tutte le informazioni condivise durante le sedute sono tutelate dal segreto professionale. La riservatezza è garantita nel rispetto del codice deontologico degli psicologi e della normativa vigente sulla privacy. Questo consente di creare uno spazio sicuro e protetto, in cui potersi esprimere liberamente.",
   },
   {
-    question: "Posso svolgere le sedute online?",
+    question: "È possibile annullare un appuntamento?",
     answer:
-      "Sì, offro la possibilità di svolgere le sedute sia in presenza che online, a seconda delle tue preferenze e necessità.",
-  },
-  {
-    question: "Serve la prescrizione medica per iniziare?",
-    answer:
-      "No, non è necessaria alcuna prescrizione medica per iniziare un percorso psicologico.",
-  },
-  {
-    question: "Quanto costa una seduta?",
-    answer:
-      "Il costo della seduta viene comunicato in fase di contatto e può variare in base al tipo di servizio richiesto.",
+      "Sì, è possibile annullare o spostare un appuntamento, con un preavviso minimo di 24 ore.",
   },
 ];
