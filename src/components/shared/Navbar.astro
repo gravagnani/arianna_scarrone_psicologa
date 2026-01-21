@@ -34,7 +34,13 @@ const navbarContacts = [
     </button>
 
     <div id="nav-menu">
-      {PATHS.map((link) => <a href={link.href}>{link.text}</a>)}
+      {
+        PATHS.map((link) => (
+          <a href={link.href} class="nav-menu-link">
+            {link.text}
+          </a>
+        ))
+      }
 
       <!-- MOBILE CONTACTS -->
       <div id="contacts-mobile">
@@ -59,11 +65,18 @@ const navbarContacts = [
     const SCROLL_THRESHOLD = 50;
     let lastScroll = window.pageYOffset;
     let ticking = false;
+    let clickLink = false;
 
     function handleScroll() {
       const currentScroll = window.pageYOffset;
       const goingDown = currentScroll > lastScroll;
       const goingUp = currentScroll < lastScroll;
+
+      if (clickLink) {
+        // If a link was just clicked, do not collapse or change navbar
+        lastScroll = currentScroll;
+        return;
+      }
 
       // Always update scrolled state
       if (currentScroll > SCROLL_THRESHOLD) {
@@ -86,6 +99,17 @@ const navbarContacts = [
       lastScroll = currentScroll;
     }
 
+    Array.from(document.getElementsByClassName("nav-menu-link")).forEach(
+      (link) => {
+        link.addEventListener("click", () => {
+          clickLink = true;
+          // Expand navbar if collapsed
+          navbar?.classList.remove("scrolled");
+        });
+      }
+    );
+
+    let scrollTimeout;
     window.addEventListener("scroll", function () {
       if (!ticking) {
         window.requestAnimationFrame(function () {
@@ -94,6 +118,11 @@ const navbarContacts = [
         });
         ticking = true;
       }
+      // Debounce: reset clickLink after scroll finishes (200ms)
+      if (scrollTimeout) clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        clickLink = false;
+      }, 200);
     });
 
     // Menu toggle
