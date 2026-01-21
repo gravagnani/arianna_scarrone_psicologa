@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Merriweather:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap");
 
 :root {
   /* COLORS */
@@ -111,7 +111,7 @@
 }
 
 body {
-  font-family: "Inter", Arial, sans-serif;
+  font-family: "Lato", Arial, sans-serif;
   font-size: 1.08rem;
   line-height: 1.6;
   color: var(--color-text-main, #222);
@@ -122,7 +122,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: "Merriweather", serif;
+  font-family: "Playfair Display", serif;
   font-weight: 700;
   color: var(--color-primary-dark, #6f8f7c);
   line-height: 1.2;
@@ -130,7 +130,7 @@ h4 {
 
 button,
 .button {
-  font-family: "Inter", Arial, sans-serif;
+  font-family: "Lato", Arial, sans-serif;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
