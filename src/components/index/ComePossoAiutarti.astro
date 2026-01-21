@@ -1,0 +1,206 @@
+---
+// No props needed for this static component
+import {
+  Users,
+  Sparkles,
+  CloudRain,
+  Split,
+  Route,
+  Briefcase,
+  Flower,
+  Target,
+  Wind,
+  Cloud,
+} from "@lucide/astro";
+
+const topics = [
+  { icon: Split, text: "Momenti di incertezza o scelte difficili" },
+  { icon: Users, text: "Difficoltà relazionali e dinamiche interpersonali" },
+  {
+    icon: Sparkles,
+    text: "Identità personale, autostima e costruzione del senso di sé",
+  },
+  { icon: CloudRain, text: "Vissuti emotivi faticosi" },
+  { icon: Route, text: "Cambiamenti di vita" },
+  { icon: Briefcase, text: "Blocchi a livello scolastico o lavorativo" },
+  { icon: Flower, text: "Esperienze di perdita e lutto" },
+  { icon: Target, text: "Timore di fallire e senso di inadeguatezza" },
+  { icon: Cloud, text: "Vissuti di ansia e stress" },
+];
+---
+
+<section id="come-posso-aiutarti">
+  <div class="container">
+    <h2 class="title">Come posso aiutarti?</h2>
+
+    <div class="intro">
+      <p class="subtitle">
+        Offro <strong
+          >consulenze e percorsi di supporto psicologico individuale</strong
+        > per adulti e giovani-adulti, in uno spazio pensato per accogliere la persona
+        nella sua unicità, senza giudizio e con rispetto dei tempi e dei vissuti individuali.
+      </p>
+      <p class="description">
+        La consulenza e il supporto psicologico sono rivolti a coloro che stanno
+        attraversando <strong>momenti di difficoltà</strong>, <strong
+          >periodi di cambiamento</strong
+        > o che desiderano semplicemente <strong>conoscersi meglio</strong>.
+      </p>
+    </div>
+
+    <h3 class="section-title">Insieme possiamo lavorare su…</h3>
+
+    <div class="topics-grid">
+      {
+        topics.map((topic) => (
+          <div class="topic-card">
+            <div class="icon-wrapper">
+              <topic.icon class="topic-icon" />
+            </div>
+            <p class="topic-text">{topic.text}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  #come-posso-aiutarti {
+    background-color: var(--color-bg-dark);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .title {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-lg);
+    text-align: center;
+    color: var(--color-primary-dark);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+
+  .intro {
+    max-width: 900px;
+    margin: 0 auto var(--space-xxl);
+    text-align: center;
+  }
+
+  .subtitle {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-main);
+    line-height: 1.8;
+    margin-bottom: var(--space-lg);
+  }
+
+  .description {
+    font-size: var(--font-size-base);
+    color: var(--color-text-muted);
+    line-height: 1.7;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+    text-align: center;
+    color: var(--color-primary);
+    margin-bottom: var(--space-xl);
+    font-weight: 600;
+  }
+
+  .topics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+    margin-top: var(--space-xl);
+  }
+
+  .topic-card {
+    background: var(--color-bg-main);
+    padding: var(--space-xl) var(--space-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transition:
+      transform var(--transition-normal),
+      box-shadow var(--transition-normal);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--space-md);
+    border: 1px solid var(--color-border);
+  }
+
+  .topic-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    border-color: var(--color-primary-light);
+  }
+
+  .icon-wrapper {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(
+      135deg,
+      var(--color-primary-light) 0%,
+      var(--color-primary) 100%
+    );
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-xs);
+  }
+
+  .topic-icon {
+    width: var(--icon-lg);
+    height: var(--icon-lg);
+    color: white;
+  }
+
+  .topic-text {
+    font-size: var(--font-size-base);
+    color: var(--color-text-main);
+    line-height: 1.6;
+    font-weight: 500;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      padding: var(--space-xl) var(--space-md);
+    }
+
+    .title {
+      font-size: 2rem;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+    }
+
+    .topics-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-md);
+    }
+
+    .topic-card {
+      padding: var(--space-lg) var(--space-md);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .title {
+      font-size: 1.75rem;
+    }
+
+    .subtitle {
+      font-size: var(--font-size-base);
+    }
+  }
+</style>
