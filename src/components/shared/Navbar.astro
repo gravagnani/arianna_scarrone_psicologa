@@ -57,15 +57,42 @@ const navbarContacts = [
     const navMenu = document.getElementById("nav-menu");
 
     const SCROLL_THRESHOLD = 50;
+    let lastScroll = window.pageYOffset;
+    let ticking = false;
 
-    // Scroll detection for navbar
-    window.addEventListener("scroll", () => {
+    function handleScroll() {
       const currentScroll = window.pageYOffset;
+      const goingDown = currentScroll > lastScroll;
+      const goingUp = currentScroll < lastScroll;
 
+      // Always update scrolled state
       if (currentScroll > SCROLL_THRESHOLD) {
         navbar?.classList.add("scrolled");
       } else {
         navbar?.classList.remove("scrolled");
+      }
+
+      // Scroll down: close menu and restore navbar
+      if (goingDown && currentScroll > SCROLL_THRESHOLD) {
+        navMenu?.classList.remove("active");
+        menuToggle?.classList.remove("active");
+        navbar?.classList.add("scrolled");
+      }
+      // Scroll up: reduce navbar
+      else if (goingUp && currentScroll > SCROLL_THRESHOLD) {
+        navbar?.classList.remove("scrolled");
+      }
+
+      lastScroll = currentScroll;
+    }
+
+    window.addEventListener("scroll", function () {
+      if (!ticking) {
+        window.requestAnimationFrame(function () {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
       }
     });
 
@@ -125,10 +152,12 @@ const navbarContacts = [
 
   #links.scrolled {
     padding: var(--space-xxs) var(--space-md);
+    transition: padding var(--navbar-transition);
   }
 
   #links.scrolled .logo {
     height: var(--navbar-logo-height-scrolled);
+    transition: height var(--navbar-transition);
   }
 
   .logo-link {
