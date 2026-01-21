@@ -1,30 +1,54 @@
 ---
 import { FAQS } from "../../config/faqs.ts";
+import { Plus, Minus } from "@lucide/astro";
 ---
 
 <script>
   // Smooth open/close animation for FAQ answers
   document.addEventListener("DOMContentLoaded", () => {
-    const detailsList = document.querySelectorAll(".faq-list details");
+    const detailsList = document.querySelectorAll(".faq-item");
+
     detailsList.forEach((details) => {
       const summary = details.querySelector("summary");
-      const content = summary.nextElementSibling;
+      const content = details.querySelector(".faq-content");
+      const plusIcon = details.querySelector(".icon-plus");
+      const minusIcon = details.querySelector(".icon-minus");
+
       if (!content) return;
 
+      // Initial state
       content.style.overflow = "hidden";
-      content.style.transition = "max-height 0.45s cubic-bezier(0.4,0,0.2,1)";
+      content.style.transition =
+        "max-height 0.4s cubic-bezier(0.4,0,0.2,1), opacity 0.3s ease";
       content.style.maxHeight = details.open
         ? content.scrollHeight + "px"
         : "0px";
+      content.style.opacity = details.open ? "1" : "0";
+
+      // Toggle icons based on initial state
+      if (plusIcon && minusIcon) {
+        plusIcon.style.display = details.open ? "none" : "block";
+        minusIcon.style.display = details.open ? "block" : "none";
+      }
 
       details.addEventListener("click", (e) => {
         e.preventDefault();
+
         if (details.open) {
           // Close with animation
           content.style.maxHeight = content.scrollHeight + "px";
+          content.style.opacity = "1";
           requestAnimationFrame(() => {
             content.style.maxHeight = "0px";
+            content.style.opacity = "0";
           });
+
+          // Toggle icons
+          if (plusIcon && minusIcon) {
+            plusIcon.style.display = "block";
+            minusIcon.style.display = "none";
+          }
+
           content.addEventListener("transitionend", function handler() {
             details.open = false;
             content.removeEventListener("transitionend", handler);
@@ -33,9 +57,18 @@ import { FAQS } from "../../config/faqs.ts";
           // Open with animation
           details.open = true;
           content.style.maxHeight = "0px";
+          content.style.opacity = "0";
           requestAnimationFrame(() => {
             content.style.maxHeight = content.scrollHeight + "px";
+            content.style.opacity = "1";
           });
+
+          // Toggle icons
+          if (plusIcon && minusIcon) {
+            plusIcon.style.display = "none";
+            minusIcon.style.display = "block";
+          }
+
           content.addEventListener("transitionend", function handler() {
             content.style.maxHeight = "";
             content.removeEventListener("transitionend", handler);
@@ -49,7 +82,7 @@ import { FAQS } from "../../config/faqs.ts";
           content.style.maxHeight = content.scrollHeight + "px";
           setTimeout(() => {
             content.style.maxHeight = "";
-          }, 450);
+          }, 400);
         }
       });
     });
@@ -57,89 +90,228 @@ import { FAQS } from "../../config/faqs.ts";
 </script>
 
 <section id="faq">
-  <h2 class="faq-title">Domande frequenti</h2>
-  <div class="faq-list">
-    {
-      FAQS.map(({ question, answer }) => (
-        <details>
-          <summary>{question}</summary>
-          <div>
-            <div class="separator" />
-            {answer}
-          </div>
-        </details>
-      ))
-    }
+  <div class="container">
+    <h2 class="title">Domande frequenti</h2>
+    <p class="subtitle">
+      Trovi qui le risposte alle domande più comuni. Se hai altri dubbi, non
+      esitare a contattarmi.
+    </p>
+
+    <div class="faq-list">
+      {
+        FAQS.map(({ question, answer }) => (
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span class="question-text">{question}</span>
+              <span class="icon-wrapper">
+                <Plus class="icon icon-plus" />
+                <Minus class="icon icon-minus" />
+              </span>
+            </summary>
+            <div class="faq-content">
+              <p class="faq-answer">{answer}</p>
+            </div>
+          </details>
+        ))
+      }
+    </div>
   </div>
 </section>
 
 <style>
   #faq {
-    width: 100%;
-    padding: 4rem 2rem;
-    background: var(--color-bg-soft, #f5f7f6);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    background: linear-gradient(
+      135deg,
+      var(--color-bg-main) 0%,
+      var(--color-bg-soft) 100%
+    );
+    position: relative;
   }
-  .faq-title {
-    font-size: 2rem;
-    color: var(--color-primary-dark, #6f8f7c);
-    margin-bottom: 2rem;
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .title {
+    font-size: 2.5rem;
+    color: var(--color-primary-dark);
+    margin-bottom: var(--space-md);
     text-align: center;
+    font-weight: 700;
+    letter-spacing: -0.5px;
   }
-  .faq-list {
-    width: 100%;
+
+  .subtitle {
+    text-align: center;
+    font-size: var(--font-size-lg);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-xxl);
     max-width: 700px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.2rem;
+    margin-left: auto;
+    margin-right: auto;
   }
-  .faq-list details {
-    background: #fff;
-    width: 100%;
-    border-radius: 0.7rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
-    transition: box-shadow 0.2s;
-    overflow: hidden;
+
+  .faq-list {
     display: flex;
     flex-direction: column;
-    align-items: start;
-    padding: 1rem 2rem;
+    gap: var(--space-md);
+  }
+
+  .faq-item {
+    background: var(--color-bg-main);
+    border-radius: var(--radius-lg);
+    border: 2px solid var(--color-border);
+    border-left: 4px solid var(--color-primary);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition:
+      box-shadow var(--transition-normal),
+      border-color var(--transition-normal),
+      transform var(--transition-normal);
+    overflow: hidden;
     cursor: pointer;
   }
-  .faq-list details[open] {
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+
+  .faq-item:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    border-left-color: var(--color-primary-dark);
+    transform: translateX(2px);
   }
-  .faq-list summary {
-    font-size: 1.15rem;
+
+  .faq-item[open] {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    border-color: var(--color-primary-light);
+    border-left-color: var(--color-primary-dark);
+  }
+
+  .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-lg) var(--space-xl);
+    font-size: var(--font-size-lg);
     font-weight: 600;
-    color: var(--color-primary, #94b09f);
+    color: var(--color-text-main);
     outline: none;
     user-select: none;
+    list-style: none;
+    cursor: pointer;
   }
-  .faq-list p {
-    color: var(--color-text-main, #222);
-    font-size: 1.05rem;
+
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  .question-text {
+    flex: 1;
+    line-height: 1.5;
+  }
+
+  .icon-wrapper {
+    position: relative;
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    background: var(--color-primary-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition:
+      background var(--transition-normal),
+      transform var(--transition-normal);
+  }
+
+  .faq-item:hover .icon-wrapper {
+    background: var(--color-primary);
+    transform: scale(1.1);
+  }
+
+  .icon {
+    width: 18px;
+    height: 18px;
+    color: white;
+    position: absolute;
+    transition:
+      transform var(--transition-fast),
+      opacity var(--transition-fast);
+  }
+
+  .icon-plus {
+    display: block;
+  }
+
+  .icon-minus {
+    display: none;
+  }
+
+  .faq-item[open] .icon-plus {
+    transform: rotate(90deg);
+  }
+
+  .faq-content {
+    padding: 0 var(--space-xl) var(--space-lg);
+  }
+
+  .faq-answer {
+    color: var(--color-text-main);
+    font-size: var(--font-size-base);
+    line-height: 1.7;
     margin: 0;
+    padding-top: var(--space-xs);
   }
-  .separator {
-    height: 1rem;
+
+  @media (max-width: 768px) {
+    .container {
+      padding: var(--space-xl) var(--space-md);
+    }
+
+    .title {
+      font-size: 2rem;
+    }
+
+    .subtitle {
+      font-size: var(--font-size-base);
+      margin-bottom: var(--space-xl);
+    }
+
+    .faq-question {
+      padding: var(--space-md) var(--space-lg);
+      font-size: var(--font-size-base);
+    }
+
+    .faq-content {
+      padding: 0 var(--space-lg) var(--space-md);
+    }
+
+    .faq-answer {
+      font-size: var(--font-size-sm);
+    }
   }
-  @media (max-width: 600px) {
-    #faq {
-      padding: 2rem 0.7rem;
+
+  @media (max-width: 480px) {
+    .title {
+      font-size: 1.75rem;
     }
-    .faq-list details {
-      padding: 1rem 1rem;
+
+    .faq-question {
+      padding: var(--space-md);
+      font-size: var(--font-size-sm);
     }
-    .faq-list summary {
-      font-size: 1rem;
-      padding: 0.5rem 0.5rem;
+
+    .faq-content {
+      padding: 0 var(--space-md) var(--space-md);
     }
-    .faq-list p {
-      font-size: 0.98rem;
+
+    .icon-wrapper {
+      width: 24px;
+      height: 24px;
+    }
+
+    .icon {
+      width: 14px;
+      height: 14px;
     }
   }
 </style>
