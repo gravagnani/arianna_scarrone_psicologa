@@ -69,8 +69,8 @@ import { Plus, Minus } from "@lucide/astro";
             minusIcon.style.display = "block";
           }
 
+          // Do not clear maxHeight after opening, so next open animates from 0 to scrollHeight
           content.addEventListener("transitionend", function handler() {
-            content.style.maxHeight = "";
             content.removeEventListener("transitionend", handler);
           });
         }
@@ -109,7 +109,9 @@ import { Plus, Minus } from "@lucide/astro";
               </span>
             </summary>
             <div class="faq-content">
-              <p class="faq-answer">{answer}</p>
+              <div class="faq-content-inner">
+                <p class="faq-answer">{answer}</p>
+              </div>
             </div>
           </details>
         ))
@@ -251,7 +253,13 @@ import { Plus, Minus } from "@lucide/astro";
   }
 
   .faq-content {
+    /* Only animate height, not padding */
+    padding: 0;
+  }
+
+  .faq-content-inner {
     padding: 0 var(--space-xl) var(--space-lg);
+    padding-top: var(--space-xs);
   }
 
   .faq-answer {
@@ -259,7 +267,6 @@ import { Plus, Minus } from "@lucide/astro";
     font-size: var(--font-size-base);
     line-height: 1.7;
     margin: 0;
-    padding-top: var(--space-xs);
   }
 
   @media (max-width: 768px) {
@@ -281,8 +288,9 @@ import { Plus, Minus } from "@lucide/astro";
       font-size: var(--font-size-base);
     }
 
-    .faq-content {
+    .faq-content-inner {
       padding: 0 var(--space-lg) var(--space-md);
+      padding-top: var(--space-xs);
     }
 
     .faq-answer {
@@ -300,8 +308,9 @@ import { Plus, Minus } from "@lucide/astro";
       font-size: var(--font-size-sm);
     }
 
-    .faq-content {
+    .faq-content-inner {
       padding: 0 var(--space-md) var(--space-md);
+      padding-top: var(--space-xs);
     }
 
     .icon-wrapper {
