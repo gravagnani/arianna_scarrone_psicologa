@@ -3,7 +3,7 @@
 
 export const PATHS = [
   { href: "/#hero", text: "Chi sono" },
-  { href: "/#come-posso-aiutarti", text: "Come posso aiutarti?" },
+  { href: "/#come-posso-aiutarti", text: "Come posso aiutarti" },
   { href: "/#il-mio-approccio", text: "Il mio approccio" },
   { href: "/dove-ricevo", text: "Dove ricevo" },
   { href: "/#faq", text: "FAQ" },
