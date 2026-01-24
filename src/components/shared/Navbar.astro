@@ -72,7 +72,16 @@ const navbarContacts = [
     const SCROLL_THRESHOLD = 50;
     let lastScroll = window.pageYOffset;
     let ticking = false;
+    // If coming from another page, set clickLink = true to prevent unwanted navbar animation
     let clickLink = false;
+    if (
+      document.referrer &&
+      document.referrer.startsWith(window.location.origin) &&
+      !["", "dove-ricevo", "#chi-sono"].includes(window.location.hash)
+    ) {
+      console.log("REFERRER");
+      clickLink = true;
+    }
 
     function handleScroll() {
       const currentScroll = window.pageYOffset;
