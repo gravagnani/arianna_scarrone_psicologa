@@ -1,5 +1,5 @@
 ---
-import Logo from "../../assets/logos/logo_text_dark.svg";
+import Logo from "../../assets/logos/logo_dark.svg";
 import { Phone, Mail } from "@lucide/astro";
 import { PATHS } from "../../config/paths.ts";
 import { CONTACTS } from "../../config/contacts.ts";
@@ -25,7 +25,14 @@ const navbarContacts = [
 
   <!-- MAIN NAV -->
   <nav id="links" aria-label="Main navigation">
-    <a class="logo-link" href="/"><Logo class="logo" /></a>
+    <a class="logo-link" href="/">
+      <Logo class="logo" />
+      <h1 class="logo-title">
+        <span class="logo-name">ARIANNA</span>
+        <span class="logo-name">SCARRONE</span>
+        <span class="logo-role">PSICOLOGA</span>
+      </h1>
+    </a>
 
     <button id="menu-toggle" aria-label="Toggle menu" type="button">
       <span></span>
@@ -186,7 +193,14 @@ const navbarContacts = [
 
   #links.scrolled .logo {
     height: var(--navbar-logo-height-scrolled);
-    transition: height var(--navbar-transition);
+  }
+
+  #links.scrolled .logo-name {
+    font-size: 0.7rem;
+  }
+
+  #links.scrolled .logo-role {
+    font-size: 0.3rem;
   }
 
   .logo-link {
@@ -194,10 +208,37 @@ const navbarContacts = [
     align-items: center;
   }
 
+  nav a.logo-link:hover {
+    text-decoration: none;
+  }
+
   .logo {
     height: var(--navbar-logo-height);
     width: auto;
     transition: height var(--navbar-transition);
+  }
+
+  .logo-title {
+    display: flex;
+    flex-direction: column;
+    margin-left: var(--space-sm);
+    color: var(--color-text-main);
+    /* gap: var(--space-xxs); */
+    margin: 0;
+  }
+
+  .logo-name {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    transition: font-size var(--navbar-transition);
+  }
+
+  .logo-role {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--color-text-main);
+    transition: font-size var(--navbar-transition);
   }
 
   #nav-menu {
@@ -296,6 +337,14 @@ const navbarContacts = [
 
     .logo {
       height: var(--navbar-logo-height-mobile);
+    }
+
+    .logo-name {
+      font-size: 1.5rem;
+    }
+
+    .logo-role {
+      font-size: 1rem;
     }
 
     #menu-toggle {
