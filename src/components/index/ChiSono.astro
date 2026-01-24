@@ -1,20 +1,19 @@
 ---
 // No props for now
 import { Image } from "astro:assets";
-import HeroImage from "../../assets/hero-image2.jpg";
-import WhatsAppLogo from "../../assets/icons/whatsapp.svg";
+import ChiSonoImage from "../../assets/chi-sono-image2.jpg";
 import { Contact } from "@lucide/astro";
 ---
 
-<section id="hero" class="hero">
-  <h1 class="hero-title">Cerchi uno psicologo a Padova?</h1>
-  <div class="hero-content">
-    <div class="hero-image">
-      <Image src={HeroImage} alt="Hero Image" />
+<section id="chi-sono" class="chi-sono">
+  <h1 class="chi-sono-title">Cerchi uno psicologo a Padova?</h1>
+  <div class="chi-sono-content">
+    <div class="chi-sono-image">
+      <Image src={ChiSonoImage} alt="ChiSono Image" />
     </div>
-    <div class="hero-text">
+    <div class="chi-sono-text">
       <div>
-        <p class="hero-description">
+        <p class="chi-sono-description">
           Sono la <strong>Dott.ssa Arianna Scarrone</strong>, lavoro come <strong
             >psicologa clinica</strong
           > a
@@ -38,7 +37,7 @@ import { Contact } from "@lucide/astro";
           > e
           <strong>online</strong> per i pazienti in tutta Italia.
         </p>
-        <a href="#chiamami" class="hero-btn">
+        <a href="#chiamami" class="chi-sono-btn">
           <Contact class="button-icon" />
           Contattami
         </a>
@@ -48,7 +47,7 @@ import { Contact } from "@lucide/astro";
 </section>
 
 <style>
-  .hero {
+  .chi-sono {
     width: 100%;
     min-height: 60vh;
     padding-top: 2rem;
@@ -58,7 +57,7 @@ import { Contact } from "@lucide/astro";
     justify-content: center;
   }
 
-  .hero-title {
+  .chi-sono-title {
     font-size: 2.7rem;
     margin-bottom: 2.2rem;
     text-align: center;
@@ -67,7 +66,7 @@ import { Contact } from "@lucide/astro";
     letter-spacing: -1px;
   }
 
-  .hero-content {
+  .chi-sono-content {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -79,7 +78,7 @@ import { Contact } from "@lucide/astro";
     padding: 2.2rem 2.5rem;
   }
 
-  .hero-image img {
+  .chi-sono-image img {
     width: 300px;
     height: 400px;
     object-fit: cover;
@@ -88,7 +87,7 @@ import { Contact } from "@lucide/astro";
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   }
 
-  .hero-text {
+  .chi-sono-text {
     flex: 1;
     display: flex;
     align-items: center;
@@ -97,11 +96,11 @@ import { Contact } from "@lucide/astro";
     line-height: 1.7;
   }
 
-  .hero-description {
+  .chi-sono-description {
     margin: 0;
   }
 
-  .hero-btn {
+  .chi-sono-btn {
     display: inline-flex;
     align-items: center;
     margin-top: 2rem;
@@ -118,7 +117,7 @@ import { Contact } from "@lucide/astro";
     text-decoration: none;
   }
 
-  .hero-btn:hover {
+  .chi-sono-btn:hover {
     background: var(--color-primary-dark, #6f8f7c);
   }
 
@@ -131,26 +130,26 @@ import { Contact } from "@lucide/astro";
   }
 
   @media (max-width: 900px) {
-    .hero {
+    .chi-sono {
       padding-top: var(--space-xxxl);
     }
-    .hero-content {
+    .chi-sono-content {
       flex-direction: column;
       align-items: center;
       gap: 1.5rem;
       padding: 1.2rem 0.7rem;
     }
-    .hero-image img {
+    .chi-sono-image img {
       width: 100%;
       max-width: 350px;
       height: auto;
     }
-    .hero-text {
+    .chi-sono-text {
       font-size: 1.05rem;
       text-align: center;
     }
 
-    .hero-description {
+    .chi-sono-description {
       text-align: justify;
     }
   }
