@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import StudioImage from "../../assets/il-mio-approccio-image.jpg";
+import { CONTACTS } from "../../config/contacts";
 ---
 
 <section id="location">
@@ -8,9 +9,11 @@ import StudioImage from "../../assets/il-mio-approccio-image.jpg";
     <div class="location-hero-text">
       <h1>Lo studio a Padova</h1>
       <p>
-        Lo studio Luci e Ombre si trova in una zona facilmente raggiungibile di
-        Padova. Lo studio è accessibile sia con i mezzi pubblici che in auto,
-        con possibilità di parcheggio nelle vicinanze.
+        Ricevo presso lo studio Luci e Ombre che si trova in via {
+          CONTACTS.address
+        }, una zona facilmente raggiungibile di Padova. Lo studio è accessibile
+        sia con i mezzi pubblici che in auto, con possibilità di parcheggio
+        nelle vicinanze.
       </p>
       <p>
         Qui troverai un ambiente accogliente e riservato, pensato per farti

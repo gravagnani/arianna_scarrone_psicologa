@@ -79,7 +79,6 @@ const navbarContacts = [
       document.referrer.startsWith(window.location.origin) &&
       !["", "dove-ricevo", "#chi-sono"].includes(window.location.hash)
     ) {
-      console.log("REFERRER");
       clickLink = true;
     }
 
@@ -122,7 +121,7 @@ const navbarContacts = [
           // Expand navbar if collapsed
           navbar?.classList.remove("scrolled");
         });
-      }
+      },
     );
 
     let scrollTimeout;
