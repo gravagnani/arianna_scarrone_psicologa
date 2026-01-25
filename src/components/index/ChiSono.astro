@@ -19,9 +19,11 @@ import { Contact } from "@lucide/astro";
           > a
           <strong>Padova</strong> e sono iscritta all'<strong
             >Ordine degli Psicologi del Veneto</strong
-          > (n. 14310). Ho conseguito la <strong
-            >Laurea Magistrale in Psicologia</strong
-          > presso l'<strong>Università degli studi di Padova</strong> e, precedentemente,
+          > (<a
+            href="https://www.ordinepsicologiveneto.it/albo-online/iscritto/14310/"
+            >n. 14310</a
+          >). Ho conseguito la <strong>Laurea Magistrale in Psicologia</strong> presso
+          l'<strong>Università degli studi di Padova</strong> e, precedentemente,
           la Laurea Triennale in Scienze e Tecniche Psicologiche presso L’Università
           degli Studi di Torino.
         </p>
@@ -103,6 +105,15 @@ import { Contact } from "@lucide/astro";
 
   .chi-sono-description {
     margin: 0;
+  }
+
+  .chi-sono-description a {
+    color: var(--color-primary, #94b09f);
+    text-decoration: none;
+  }
+
+  .chi-sono-description a:hover {
+    text-decoration: underline;
   }
 
   .chi-sono-btn {
