@@ -1,0 +1,97 @@
+---
+import { Image } from "astro:assets";
+import StudioImage from "../../assets/images/il-mio-approccio-image.jpg";
+import { CONTACTS } from "../../config/contacts";
+---
+
+<section id="dove-ricevo">
+  <div class="dove-ricevo-hero-content">
+    <div class="dove-ricevo-hero-text">
+      <h1>Lo studio a Padova</h1>
+      <p>
+        Ricevo online e presso lo studio Luci e Ombre che si trova in via {
+          CONTACTS.address
+        }, una zona facilmente raggiungibile di Padova. Lo studio è accessibile
+        sia con i mezzi pubblici che in auto, con possibilità di parcheggio
+        nelle vicinanze.
+      </p>
+      <p>
+        Qui troverai un ambiente accogliente e riservato, pensato per farti
+        sentire a tuo agio e offrirti lo spazio necessario per prenderti cura di
+        te in un ambiente sereno.
+      </p>
+    </div>
+    <div class="dove-ricevo-hero-image">
+      <Image src={StudioImage} alt="Studio psicologico a Torino" />
+    </div>
+  </div>
+</section>
+
+<style>
+  #dove-ricevo {
+    width: 100%;
+    background: var(--color-bg-soft, #f5f7f6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .dove-ricevo-hero-content {
+    display: flex;
+    flex-direction: row;
+    padding: 1.2rem 0.7rem;
+    gap: 3rem;
+    max-width: 1100px;
+    width: 100%;
+    align-items: stretch;
+  }
+  .dove-ricevo-hero-text {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1.15rem;
+    color: var(--color-text-main, #222);
+  }
+  .dove-ricevo-hero-text h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.7rem;
+    color: var(--color-primary-dark, #6f8f7c);
+  }
+  .dove-ricevo-hero-text h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+    color: var(--color-primary, #94b09f);
+  }
+  .dove-ricevo-hero-text p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+  }
+  .dove-ricevo-hero-image {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .dove-ricevo-hero-image img {
+    width: 100%;
+    max-width: 350px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 1rem;
+    background: #eee;
+  }
+  @media (max-width: 900px) {
+    #dove-ricevo {
+      padding-top: var(--space-xxxl);
+    }
+    .dove-ricevo-hero-content {
+      flex-direction: column;
+      gap: 2rem;
+      align-items: center;
+    }
+    .dove-ricevo-hero-image img {
+      max-width: 100%;
+      height: 300px;
+    }
+  }
+</style>
