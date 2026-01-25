@@ -43,7 +43,7 @@ const navbarContacts = [
     <div id="nav-menu">
       {
         PATHS.map((link) => (
-          <a href={link.href} class="nav-menu-link">
+          <a href={link.href} class="nav-menu-link click-link-open-navbar">
             {link.text}
           </a>
         ))
@@ -114,15 +114,15 @@ const navbarContacts = [
       lastScroll = currentScroll;
     }
 
-    Array.from(document.getElementsByClassName("nav-menu-link")).forEach(
-      (link) => {
-        link.addEventListener("click", () => {
-          clickLink = true;
-          // Expand navbar if collapsed
-          navbar?.classList.remove("scrolled");
-        });
-      },
-    );
+    Array.from(
+      document.getElementsByClassName("click-link-open-navbar"),
+    ).forEach((link) => {
+      link.addEventListener("click", () => {
+        clickLink = true;
+        // Expand navbar if collapsed
+        navbar?.classList.remove("scrolled");
+      });
+    });
 
     let scrollTimeout;
     window.addEventListener("scroll", function () {
