@@ -12,7 +12,7 @@ import { Contact } from "@lucide/astro";
       <Image src={ChiSonoImage} alt="ChiSono Image" />
     </div>
     <div class="chi-sono-text">
-      <div>
+      <div class="chi-sono-description-wrapper">
         <p class="chi-sono-description">
           Sono la <strong>Dott.ssa Arianna Scarrone</strong>, lavoro come <strong
             >psicologa clinica</strong
@@ -27,7 +27,7 @@ import { Contact } from "@lucide/astro";
           la <strong>Laurea Triennale in Scienze e Tecniche Psicologiche</strong
           > presso <strong>L’Università degli Studi di Torino</strong>.
         </p>
-        <p>
+        <p class="chi-sono-description">
           Nel 2024 ho conseguito un <strong
             >Master in Sessuologia Clinica</strong
           > presso Studio RiPsi e al momento mi sto specializzando in
@@ -39,7 +39,7 @@ import { Contact } from "@lucide/astro";
           differenti tra loro e di arricchire il mio bagaglio professionale e il
           mio modo di lavorare.
         </p>
-        <p>
+        <p class="chi-sono-description">
           Attualmente offro il mio supporto <strong>in presenza a Padova</strong
           > e
           <strong>online</strong> per i pazienti in tutta Italia.
@@ -94,6 +94,13 @@ import { Contact } from "@lucide/astro";
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   }
 
+  .chi-sono-description-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.2rem;
+  }
+
   .chi-sono-text {
     flex: 1;
     display: flex;
@@ -131,6 +138,7 @@ import { Contact } from "@lucide/astro";
     transition: background 0.2s;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
     text-decoration: none;
+    width: fit-content;
   }
 
   .chi-sono-btn:hover {
@@ -167,6 +175,11 @@ import { Contact } from "@lucide/astro";
 
     .chi-sono-description {
       text-align: justify;
+    }
+
+    .chi-sono-btn {
+      width: 100%;
+      display: block;
     }
   }
 </style>
