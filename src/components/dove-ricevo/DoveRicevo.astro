@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import StudioImage from "../../assets/images/il-mio-approccio-image.jpg";
+import StudioImage from "../../assets/images/dove-ricevo.jpg";
 import { CONTACTS } from "../../config/contacts";
 ---
 
@@ -9,11 +9,10 @@ import { CONTACTS } from "../../config/contacts";
     <div class="dove-ricevo-hero-text">
       <h1>Lo studio a Padova</h1>
       <p>
-        Ricevo online e presso lo studio Luci e Ombre che si trova in via {
-          CONTACTS.address
-        }, una zona facilmente raggiungibile di Padova. Lo studio è accessibile
-        sia con i mezzi pubblici che in auto, con possibilità di parcheggio
-        nelle vicinanze.
+        Ricevo online e presso lo studio Luci e Ombre, che si trova in
+        <strong>{CONTACTS.address}</strong>, una zona facilmente raggiungibile
+        di Padova. Lo studio è accessibile sia con i mezzi pubblici che in auto,
+        con possibilità di parcheggio nelle vicinanze.
       </p>
       <p>
         Qui troverai un ambiente accogliente e riservato, pensato per farti
@@ -74,16 +73,13 @@ import { CONTACTS } from "../../config/contacts";
   }
   .dove-ricevo-hero-image img {
     width: 100%;
-    max-width: 350px;
-    height: 400px;
+    width: auto;
+    height: 350px;
     object-fit: cover;
     border-radius: 1rem;
     background: #eee;
   }
   @media (max-width: 900px) {
-    #dove-ricevo {
-      padding-top: var(--space-xxxl);
-    }
     .dove-ricevo-hero-content {
       flex-direction: column;
       gap: 2rem;
