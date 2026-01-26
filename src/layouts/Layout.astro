@@ -1,6 +1,19 @@
 ---
 import "../styles/global.css";
 import SchemaPsychologist from "../config/schema-psychologist.astro";
+
+const {
+  title = "Arianna Scarrone Psicologa",
+  description = "Psicologa Padova: consulenza e supporto psicologico in presenza e online. Dott.ssa Arianna Scarrone, psicologa clinica a Padova.",
+  keywords = [
+    "psicologa Padova",
+    "psicologo Padova",
+    "Arianna Scarrone",
+    "supporto psicologico",
+    "consulenza psicologica",
+    "psicologa online",
+  ],
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -9,10 +22,13 @@ import SchemaPsychologist from "../config/schema-psychologist.astro";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta name="generator" content={Astro.generator} />
     <SchemaPsychologist />
-    <title>Arianna Scarrone Psicologa</title>
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords.join(", ")} />
   </head>
   <body>
     <slot />
