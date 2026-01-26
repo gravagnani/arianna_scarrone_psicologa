@@ -1,0 +1,153 @@
+---
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://ariannascarronepsicologa.it/#webpage",
+      url: "https://ariannascarronepsicologa.it/",
+      name: "Psicologa Padova Dott.ssa Arianna Scarrone",
+      isPartOf: {
+        "@id": "https://ariannascarronepsicologa.it/#website",
+      },
+      about: {
+        "@id":
+          "https://ariannascarronepsicologa.it/#/schema/person/arianna-scarrone",
+      },
+      primaryImageOfPage: {
+        "@id": "https://ariannascarronepsicologa.it/#primaryimage",
+      },
+      image: {
+        "@id": "https://ariannascarronepsicologa.it/#primaryimage",
+      },
+      thumbnailUrl:
+        "https://ariannascarronepsicologa.it/arianna-scarrone-psicologa.jpg",
+      datePublished: "2026-02-01T00:00:00+00:00",
+      dateModified: "2026-02-01T00:00:00+00:00",
+      breadcrumb: {
+        "@id": "https://ariannascarronepsicologa.it/#breadcrumb",
+      },
+      inLanguage: "it-IT",
+      potentialAction: [
+        {
+          "@type": "ReadAction",
+          target: ["https://ariannascarronepsicologa.it/"],
+        },
+      ],
+    },
+    {
+      "@type": "ImageObject",
+      inLanguage: "it-IT",
+      "@id": "https://ariannascarronepsicologa.it/#primaryimage",
+      url: "https://ariannascarronepsicologa.it/arianna-scarrone-psicologa.jpg",
+      contentUrl:
+        "https://ariannascarronepsicologa.it/arianna-scarrone-psicologa.jpg",
+      caption: "Psicologa Padova - Dott.ssa Arianna Scarrone",
+      width: 800,
+      height: 800,
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://ariannascarronepsicologa.it/#logo",
+      inLanguage: "it-IT",
+      url: "https://ariannascarronepsicologa.it/logo.png",
+      contentUrl: "https://ariannascarronepsicologa.it/logo.png",
+      width: 600,
+      height: 600,
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://ariannascarronepsicologa.it/#breadcrumb",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://ariannascarronepsicologa.it/",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Chi sono",
+          item: "https://ariannascarronepsicologa.it/#chi-sono",
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Come posso aiutarti",
+          item: "https://ariannascarronepsicologa.it/#come-posso-aiutarti",
+        },
+        {
+          "@type": "ListItem",
+          position: 4,
+          name: "Il mio approccio",
+          item: "https://ariannascarronepsicologa.it/#il-mio-approccio",
+        },
+        {
+          "@type": "ListItem",
+          position: 5,
+          name: "Contattami",
+          item: "https://ariannascarronepsicologa.it/#contattami",
+        },
+        {
+          "@type": "ListItem",
+          position: 6,
+          name: "Dove ricevo",
+          item: "https://ariannascarronepsicologa.it/dove-ricevo/",
+        },
+        {
+          "@type": "ListItem",
+          position: 7,
+          name: "FAQ",
+          item: "https://ariannascarronepsicologa.it/#faq",
+        },
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://ariannascarronepsicologa.it/#website",
+      url: "https://ariannascarronepsicologa.it/",
+      name: "Psicologa Padova - Dott.ssa Arianna Scarrone",
+      description:
+        "Psicologa - Consulenza e supporto psicologico a Padova e online",
+      alternateName: "Dott.ssa Arianna Scarrone - Psicologa Padova",
+      inLanguage: "it-IT",
+      publisher: {
+        "@id":
+          "https://ariannascarronepsicologa.it/#/schema/person/arianna-scarrone",
+      },
+    },
+    {
+      "@type": ["Person", "Organization"],
+      "@id":
+        "https://ariannascarronepsicologa.it/#/schema/person/arianna-scarrone",
+      name: "Arianna Scarrone",
+      jobTitle: "Psicologa Psicoterapeuta",
+      description:
+        "Dott.ssa Arianna Scarrone, psicologa clinica a Padova. Supporto psicologico in presenza e online.",
+      alumniOf: [
+        {
+          "@type": "CollegeOrUniversity",
+          name: "Università degli Studi di Padova",
+        },
+        {
+          "@type": "CollegeOrUniversity",
+          name: "Università degli Studi di Torino",
+        },
+      ],
+      image: {
+        "@id": "https://ariannascarronepsicologa.it/#primaryimage",
+      },
+      logo: {
+        "@id": "https://ariannascarronepsicologa.it/#logo",
+      },
+      sameAs: [
+        "https://www.linkedin.com/in/arianna-scarrone-psicologa/",
+        "https://www.instagram.com/arianna_scarrone_psicologa/",
+      ],
+    },
+  ],
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
