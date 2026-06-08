@@ -8,11 +8,24 @@ import { CONTACTS } from "../../config/contacts.ts";
 <footer class="footer">
   <div class="footer-content">
     <div class="footer-info">
-      <Logo class="footer-logo" />
       <div class="footer-about">
-        <div class="footer-title">Arianna Scarrone</div>
-        <div class="footer-role">Psicologa</div>
-        <div class="footer-address">{CONTACTS.fullAddress}</div>
+        <Logo class="footer-logo" />
+        <div>
+          <div class="footer-about-info">
+            <div class="footer-title">Arianna Scarrone</div>
+            <div class="footer-role">Psicologa</div>
+            <div class="footer-address">{CONTACTS.fullAddress}</div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-guida-psicologi" align="center">
+        <a rel="nofollow" href={CONTACTS.guidaPsicologiURL} target="_blank">
+          <img
+            src={CONTACTS.guidaPsicologiImageURL}
+            alt="Arianna Scarrone"
+            border="0"
+          />
+        </a>
       </div>
     </div>
     <nav class="footer-nav" aria-label="Footer navigation">
@@ -33,7 +46,7 @@ import { CONTACTS } from "../../config/contacts.ts";
     <span class="delimiter"> | </span>
     <span>P.IVA {CONTACTS.vatNumber}</span>
   </div>
-  <div class="footer-credit">Made with ❤️ by Giuseppe Ravagnani</div>
+  <div class="footer-credit">Made with ❤️ by GR</div>
 </footer>
 
 <style>
@@ -60,6 +73,13 @@ import { CONTACTS } from "../../config/contacts.ts";
 
   .footer-info {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-lg);
+  }
+
+  .footer-about {
+    display: flex;
     flex-direction: row;
     align-items: center;
     gap: var(--space-lg);
@@ -70,7 +90,7 @@ import { CONTACTS } from "../../config/contacts.ts";
     width: auto;
   }
 
-  .footer-about {
+  .footer-about-info {
     display: flex;
     flex-direction: column;
     gap: var(--space-xxs);
@@ -132,6 +152,18 @@ import { CONTACTS } from "../../config/contacts.ts";
     padding: var(--space-md);
   }
 
+  .footer-guida-psicologi {
+    max-width: 200px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .footer-guida-psicologi img {
+    width: 100%;
+    height: auto;
+  }
+
   @media (max-width: 700px) {
     .footer-content {
       flex-direction: column;
@@ -142,7 +174,7 @@ import { CONTACTS } from "../../config/contacts.ts";
     .footer-info {
       flex-direction: column;
       align-items: center;
-      gap: var(--space-sm);
+      gap: var(--space-lg);
       text-align: center;
     }
 
