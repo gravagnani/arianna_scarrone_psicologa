@@ -10,7 +10,7 @@ export const FAQS = [
   {
     question: "In cosa consiste il primo colloquio?",
     answer:
-      "Il primo colloquio è uno spazio di incontro pensato per accogliere la richiesta e iniziare a dare forma al percorso. È un'occasione per raccontare ciò che ti ha portato a chiedere supporto, senza pressioni e senza la necessità di avere tutto chiaro fin da subito. Durante l'incontro viene dato spazio ai tuoi vissuti, alle domande e alle aspettative, con l'obiettivo di comprendere insieme il tuo bisogno. Oltre a ciò ti verrà fornito il preventivo, l'informativa relativa al trattamento dei dati personali e il consenso informato.",
+      "Il primo colloquio è uno spazio di incontro pensato per accogliere la richiesta e iniziare a dare forma al percorso. È un'occasione per raccontare ciò che ti ha portato a chiedere supporto, senza pressioni e senza la necessità di avere tutto chiaro fin da subito. Durante l'incontro viene dato spazio ai tuoi vissuti, alle domande e alle aspettative, con l'obiettivo di comprendere insieme il tuo bisogno. Oltre a ciò ti verrà fornito il preventivo, l'informativa relativa al trattamento dei dati personali e il consenso informato. Sono previsti prezzi agevolati per studenti e studentesse.",
   },
   {
     question: "Il costo delle sedute è detraibile ai fini fiscali?",
